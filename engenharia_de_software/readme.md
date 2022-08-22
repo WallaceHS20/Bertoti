@@ -2,7 +2,7 @@
 
 Ambos as funções se complementam, pois a programação necessita da organização da engenharia para atingir os resultados com eficiência. O mercado de tecnologia tempo é extremamente valioso e a arte de programar um software exige tempo e dedicação para atingir os resultados.
 
-# trade-off - negociação, qualidades diferenciais para cada situação que será empregado
+## trade-off - negociação, qualidades diferenciais para cada situação que será empregado
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
