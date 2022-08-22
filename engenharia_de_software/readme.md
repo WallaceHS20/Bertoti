@@ -17,3 +17,4 @@ Ambos as funções se complementam, pois a programação necessita da organizaç
 REQUISITOS NÃO FUNCIONAIS
 
 - Sistema inteligente capaz de absorver informações de interesse do perfil do cliente e exibir una tela inicial 
+- 
