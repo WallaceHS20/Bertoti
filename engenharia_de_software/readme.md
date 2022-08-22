@@ -13,6 +13,7 @@ Ambos as funções se complementam, pois a programação necessita da organizaç
 
 - Funciorinário irá cadastrar calçados inserindo nome do calçado, preço, modelo, cor, tamanho, marca e quantidade.
 - Cliente capaz de pesquisar conjunto de tenis por meio de marca, modelo, tamanho e faixa de preço do maior para o menor e disponiveis.
+- Cliente capaz de realizar compras pelo site
 
 REQUISITOS NÃO FUNCIONAIS
 
