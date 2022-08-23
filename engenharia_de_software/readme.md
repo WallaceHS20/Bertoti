@@ -20,3 +20,4 @@ REQUISITOS NÃO FUNCIONAIS
 - Sistema inteligente capaz de absorver informações de interesse do perfil do cliente e exibir una tela inicial 
 
 ![DOC](https://user-images.githubusercontent.com/101594950/186282315-a66c7f78-42d9-4874-86ca-de9b2616d6e3.png)
+
