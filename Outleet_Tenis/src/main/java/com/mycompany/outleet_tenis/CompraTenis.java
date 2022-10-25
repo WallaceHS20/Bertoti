@@ -6,11 +6,17 @@ package com.mycompany.outleet_tenis;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,48 +49,53 @@ public class CompraTenis extends javax.swing.JFrame {
         c2 = new javax.swing.JFormattedTextField();
         c3 = new javax.swing.JFormattedTextField();
         c4 = new javax.swing.JFormattedTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        radiopix = new javax.swing.JRadioButton();
         radiocartao = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        radiodebito = new javax.swing.JRadioButton();
+        radiodin = new javax.swing.JRadioButton();
         jLabel8 = new javax.swing.JLabel();
         c5 = new javax.swing.JComboBox<>();
         d5 = new javax.swing.JLabel();
         d1 = new javax.swing.JLabel();
         d2 = new javax.swing.JLabel();
         c1 = new javax.swing.JFormattedTextField();
+        d6 = new javax.swing.JLabel();
+        csenha = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        campo_rua = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        campo_bairro = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jTextField6 = new javax.swing.JTextField();
+        campo_cep = new javax.swing.JFormattedTextField();
+        campo_num = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        campo_complemento = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        lblfrete = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        btncalc = new javax.swing.JButton();
+        lblfrete1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        campo_cpf = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cmbquant = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        campo_nome = new javax.swing.JTextField();
         cmb = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbtam = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         precoL = new javax.swing.JLabel();
+        precoL1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        vtotal = new javax.swing.JLabel();
+        txtvalortot = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("COMPRA DE PRODUTO");
@@ -95,19 +106,19 @@ public class CompraTenis extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
 
         d3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        d3.setText("COD - SEGURANÇA");
+        d3.setText("COD - SEG");
 
         d4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        d4.setText("VALIDADE");
+        d4.setText("VAL");
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("Pix");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(radiopix);
+        radiopix.setText("Pix");
+        radiopix.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                radiopixActionPerformed(evt);
             }
         });
 
@@ -119,35 +130,49 @@ public class CompraTenis extends javax.swing.JFrame {
             }
         });
 
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setText("Cartão de Débito");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(radiodebito);
+        radiodebito.setText("Cartão de Débito");
+        radiodebito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                radiodebitoActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setText("Dinheiro a Vista");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(radiodin);
+        radiodin.setText("Boleto");
+        radiodin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                radiodinActionPerformed(evt);
             }
         });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel8.setText("FORMA DE PAGAMENTO");
 
-        c5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1x", "2x", "3x", "4x", "5x", "6x", "7x", "8x", "9x", "10x", "11x", "12x" }));
+        c5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        c5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                c5ActionPerformed(evt);
+            }
+        });
 
         d5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        d5.setText("N° PARCELAS");
+        d5.setText("PARCELAS");
 
         d1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         d1.setText("NOME");
 
         d2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         d2.setText("N° CARTÃO");
+
+        c1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                c1ActionPerformed(evt);
+            }
+        });
+
+        d6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        d6.setText("SENHA");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -166,30 +191,34 @@ public class CompraTenis extends javax.swing.JFrame {
                         .addComponent(c2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(d6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(csenha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(d3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(c3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(d4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(c4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(d5)
-                        .addGap(12, 12, 12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(c5, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(348, 348, 348)
-                                .addComponent(jRadioButton4)
+                                .addComponent(radiodin)
                                 .addGap(72, 72, 72)
-                                .addComponent(jRadioButton1))
+                                .addComponent(radiopix))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(radiocartao)
                                 .addGap(64, 64, 64)
-                                .addComponent(jRadioButton3)))
-                        .addGap(0, 4, Short.MAX_VALUE)))
+                                .addComponent(radiodebito)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -200,9 +229,9 @@ public class CompraTenis extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(radiocartao)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton1))
+                    .addComponent(radiodebito)
+                    .addComponent(radiodin)
+                    .addComponent(radiopix))
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(d1)
@@ -210,19 +239,19 @@ public class CompraTenis extends javax.swing.JFrame {
                     .addComponent(c2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(d5)
-                        .addComponent(c5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(d4)
-                        .addComponent(c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(d3)
-                        .addComponent(c3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(d5)
+                    .addComponent(c5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(c4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(d4)
+                    .addComponent(c3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(d3)
+                    .addComponent(d6)
+                    .addComponent(csenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel12.setText("ENDEREÇO DE ENTREGA");
@@ -242,20 +271,21 @@ public class CompraTenis extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel18.setText("FRETE");
 
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel19.setText("R$");
-
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel20.setText("0.00");
+        lblfrete.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblfrete.setText("0.00");
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel16.setText("N°");
 
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel22.setText("R$ 0.00");
+        btncalc.setText("Calcular");
+        btncalc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncalcActionPerformed(evt);
+            }
+        });
 
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel21.setText("VALOR TOTAL");
+        lblfrete1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblfrete1.setText("R$");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -265,45 +295,44 @@ public class CompraTenis extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(campo_num, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(jLabel16)))
-                .addGap(55, 55, 55)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel20))
-                    .addComponent(jLabel18))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel22))
-                    .addComponent(jLabel21))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(campo_complemento, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(btncalc)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel18))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblfrete1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblfrete)))
+                .addGap(36, 36, 36))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(campo_rua, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addGap(6, 6, 6)
                                     .addComponent(jLabel13)))
                             .addGap(18, 18, 18)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel14)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(campo_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(18, 18, 18)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                                .addComponent(campo_cep, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addComponent(jLabel15)
                                     .addGap(0, 0, Short.MAX_VALUE))))
@@ -315,27 +344,24 @@ public class CompraTenis extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
+                .addContainerGap(107, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel21)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel22))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel20)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
                             .addComponent(jLabel17))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(10, 10, 10))
+                            .addComponent(campo_num, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campo_complemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btncalc)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblfrete)
+                            .addComponent(lblfrete1))))
+                .addGap(20, 20, 20))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(11, 11, 11)
@@ -347,9 +373,9 @@ public class CompraTenis extends javax.swing.JFrame {
                         .addComponent(jLabel15))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(campo_rua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campo_bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campo_cep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(74, Short.MAX_VALUE)))
         );
 
@@ -358,7 +384,7 @@ public class CompraTenis extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel9.setText("Quantidade");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", " " }));
+        cmbquant.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", " " }));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("CPF");
@@ -375,7 +401,7 @@ public class CompraTenis extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Tenis");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47" }));
+        cmbtam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47" }));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Tamanho");
@@ -384,7 +410,10 @@ public class CompraTenis extends javax.swing.JFrame {
         jLabel5.setText("INFORMAÇÕES DO PEDIDO");
 
         precoL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        precoL.setText("R$ 0.00");
+        precoL.setText("0.00");
+
+        precoL1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        precoL1.setText("R$");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -395,7 +424,7 @@ public class CompraTenis extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campo_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cmb, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
                             .addComponent(jLabel1))
@@ -404,19 +433,22 @@ public class CompraTenis extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jFormattedTextField2)
+                            .addComponent(campo_cpf)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(precoL1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(precoL)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(30, 30, 30)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cmbtam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(28, 28, 28)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(cmbquant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -433,8 +465,8 @@ public class CompraTenis extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campo_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campo_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -443,9 +475,10 @@ public class CompraTenis extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(precoL))
+                    .addComponent(cmbtam)
+                    .addComponent(cmbquant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(precoL)
+                    .addComponent(precoL1))
                 .addGap(18, 18, 18))
         );
 
@@ -458,21 +491,40 @@ public class CompraTenis extends javax.swing.JFrame {
             }
         });
 
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel21.setText("VALOR TOTAL");
+
+        vtotal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        vtotal.setText("0.00");
+
+        txtvalortot.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtvalortot.setText("R$");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(55, 55, 55)
+                .addComponent(jLabel21)
+                .addGap(43, 43, 43)
+                .addComponent(txtvalortot)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(vtotal)
+                .addGap(74, 74, 74)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(219, 219, 219))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtvalortot)
+                    .addComponent(vtotal)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -482,9 +534,9 @@ public class CompraTenis extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -494,9 +546,9 @@ public class CompraTenis extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -507,12 +559,72 @@ public class CompraTenis extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        Compra ttenis = new Compra();
-        ttenis.compra("teste", "+eeeeee", "eeeeeeeeeeefff", (float) 17.2, LocalDate.MIN);
+       
+// TODO add your handling code here:
+        int parc = 0;
+        double vtot = 0.00;
+        double fret = Double.parseDouble(lblfrete.getText());
+        String valor = "";
+        List<String> compra = new ArrayList();
         
-        
-        
+        if (fret == 0.00){
+            System.out.println("vazio");
+            JOptionPane.showMessageDialog(null,
+                "PREENCHA O CAMPO FRETE", "WALLACE INFORMA:",
+                JOptionPane.ERROR_MESSAGE);
+           
+        }else{
+            
+            if(radiocartao.isSelected()){
+            
+            parc = Integer.parseInt((String)c5.getSelectedItem());
+            vtot = Double.parseDouble(precoL.getText());
+            fret = Double.parseDouble(lblfrete.getText());
+            vtot = vtot + (parc * 60) + fret;
+            valor = String.valueOf(vtot);
+            
+            System.out.println(vtot);
+            
+        }         
+            try {
+                
+                 File arquivoCSV = new File("C:\\Users\\Honorato\\Documents\\NetBeansProjects\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\compra.csv");
+                 String linhasDoArquivo = new String();           
+                 Scanner leitor = new Scanner(arquivoCSV);
+            
+                 while (leitor.hasNext()){
+                
+                    linhasDoArquivo = leitor.nextLine();
+                    compra.add(linhasDoArquivo);
+                    
+            }
+                 
+                 if (radiocartao.isSelected() || radiodebito.isSelected()){
+                     compra.add(campo_nome.getText() + ";" + campo_cpf.getText() + ";" + cmb.getSelectedItem() + ";" + valor + ";" + c2.getText() + ";" + c5.getSelectedItem() + ";" + campo_rua.getText() + ", " + campo_num.getText()+ ", " + campo_bairro.getText() + ", " + campo_cep.getText() + ", " + campo_complemento.getText());
+                 }
+                 
+                 else{
+                     compra.add(campo_nome.getText() + ";" + campo_cpf.getText() + ";" + cmb.getSelectedItem() + ";" + valor + ";" + "---" + ";" + "---" + ";" + campo_rua.getText() + ", " + campo_num.getText()+ ", " + campo_bairro.getText() + ", " + campo_cep.getText() + ", " + campo_complemento.getText());
+                 }
+                
+                PrintWriter pw = new PrintWriter(new File("C:\\Users\\Honorato\\Documents\\NetBeansProjects\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\compra.csv"));
+                
+                StringBuilder sb=new StringBuilder();
+                
+                for (String lin : compra){
+                    sb.append(lin);
+                    sb.append("\r\n");
+            }
+                
+                 pw.write(sb.toString());
+                 pw.close(); 
+                
+                
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(CompraTenis.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -590,15 +702,53 @@ public class CompraTenis extends javax.swing.JFrame {
                 preco.add(linhasDoArquivo);
             }
             
-            precoL.setText("R$ " + preco.get(idp)); 
+            precoL.setText(preco.get(idp)); 
             
         }catch(FileNotFoundException e){   
         }
+        
+        if(!campo_rua.getText().equals("") && !campo_cep.getText().equals("") && !campo_num.getText().equals("") && !campo_bairro.getText().equals("")){
+            
+        int parc = 0;
+        double vtot = 0.00;
+        double fret = Double.parseDouble(lblfrete.getText());
+        String valor = "";
+        List<String> compra = new ArrayList();
+        
+         if(radiocartao.isSelected()){
+            
+            parc = Integer.parseInt((String)c5.getSelectedItem());
+            vtot = Double.parseDouble(precoL.getText());
+            fret = Double.parseDouble(lblfrete.getText());
+            vtot = vtot + (parc * 60) + fret;
+            valor = String.valueOf(vtot);
+            
+            vtotal.setText(valor);
+            
+         }else{
+             
+            vtot = Double.parseDouble(precoL.getText());
+            fret = Double.parseDouble(lblfrete.getText());
+            vtot = vtot + fret;
+            valor = String.valueOf(vtot);
+            
+            vtotal.setText(valor);
+         }
+            
+        }
+        
     }//GEN-LAST:event_cmbActionPerformed
 
     private void radiocartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiocartaoActionPerformed
         // TODO add your handling code here:
-        
+         double fret = Double.parseDouble(lblfrete.getText());
+        if (fret == 0.00){
+            System.out.println("vazio");
+            JOptionPane.showMessageDialog(null,
+                "PREENCHA O CAMPO FRETE", "WALLACE INFORMA:",
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
        
         c1.show(Boolean.TRUE);
         c2.show(Boolean.TRUE);
@@ -608,35 +758,178 @@ public class CompraTenis extends javax.swing.JFrame {
         
     }//GEN-LAST:event_radiocartaoActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void radiodebitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiodebitoActionPerformed
         // TODO add your handling code here:
+        
+        double fret = Double.parseDouble(lblfrete.getText());
+        if (fret == 0.00){
+            System.out.println("vazio");
+            JOptionPane.showMessageDialog(null,
+                "PREENCHA O CAMPO FRETE", "WALLACE INFORMA:",
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         c1.show(Boolean.TRUE);
         c2.show(Boolean.TRUE);
         c3.show(Boolean.TRUE); 
         c4.show(Boolean.TRUE);
-        c5.enable(true);
+        c5.enable(false);
+        
+                if (campo_rua.getText().equals("") || campo_bairro.getText().equals("") || campo_cep.getText().equals("") || campo_num.getText().equals("") || campo_rua.getText().equals("")){
+        
+             JOptionPane.showMessageDialog(null,
+                "ALERTA DE CAMPO VAZIO", "WALLACE INFORMA:",
+                JOptionPane.ERROR_MESSAGE);
+            
+    } else{
+                    
+        lblfrete.setText("20.00");
+            
+        int parc = 0;
+        double vtot = 0.00;
+        double frete = Double.parseDouble(lblfrete.getText());
+        String valor = "";
+        List<String> compra = new ArrayList();
+        
+         if(radiocartao.isSelected()){
+            
+            parc = Integer.parseInt((String)c5.getSelectedItem());
+            vtot = Double.parseDouble(precoL.getText());
+            frete = Double.parseDouble(lblfrete.getText());
+            vtot = vtot + (parc * 60) + frete;
+            valor = String.valueOf(vtot);
+            
+            vtotal.setText(valor);
+            
+         }else{
+             
+            vtot = Double.parseDouble(precoL.getText());
+            frete = Double.parseDouble(lblfrete.getText());
+            vtot = vtot + frete;
+            valor = String.valueOf(vtot);
+            
+            vtotal.setText(valor);
+         }
+        
+        }
 
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    }//GEN-LAST:event_radiodebitoActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void radiodinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiodinActionPerformed
         // TODO add your handling code here:
+        
+         double fret = Double.parseDouble(lblfrete.getText());
+        if (fret == 0.00){
+            System.out.println("vazio");
+            JOptionPane.showMessageDialog(null,
+                "PREENCHA O CAMPO FRETE", "WALLACE INFORMA:",
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         c1.show(Boolean.FALSE);
         c2.show(Boolean.FALSE);
         c3.show(Boolean.FALSE);
         c4.show(Boolean.FALSE);
         c5.enable(false);
 
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    }//GEN-LAST:event_radiodinActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void radiopixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiopixActionPerformed
         // TODO add your handling code here:
+        
+        double fret = Double.parseDouble(lblfrete.getText());
+        if (fret == 0.00){
+            System.out.println("vazio");
+            JOptionPane.showMessageDialog(null,
+                "PREENCHA O CAMPO FRETE", "WALLACE INFORMA:",
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         c1.show(Boolean.FALSE);
         c2.show(Boolean.FALSE);
         c3.show(Boolean.FALSE);
         c4.show(Boolean.FALSE);
         c5.enable(false);
 
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_radiopixActionPerformed
+
+    private void btncalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncalcActionPerformed
+        // TODO add your handling code here:
+        if (campo_rua.getText().equals("") || campo_bairro.getText().equals("") || campo_cep.getText().equals("") || campo_num.getText().equals("") || campo_rua.getText().equals("")){
+        
+             JOptionPane.showMessageDialog(null,
+                "ALERTA DE CAMPO VAZIO", "WALLACE INFORMA:",
+                JOptionPane.ERROR_MESSAGE);
+            
+    } else{
+        lblfrete.setText("20.00");
+            
+        int parc = 0;
+        double vtot = 0.00;
+        double fret = Double.parseDouble(lblfrete.getText());
+        String valor = "";
+        List<String> compra = new ArrayList();
+        
+         if(radiocartao.isSelected()){
+            
+            parc = Integer.parseInt((String)c5.getSelectedItem());
+            vtot = Double.parseDouble(precoL.getText());
+            fret = Double.parseDouble(lblfrete.getText());
+            vtot = vtot + (parc * 60) + fret;
+            valor = String.valueOf(vtot);
+            
+            vtotal.setText(valor);
+            
+         }else{
+             
+            vtot = Double.parseDouble(precoL.getText());
+            fret = Double.parseDouble(lblfrete.getText());
+            vtot = vtot + fret;
+            valor = String.valueOf(vtot);
+            
+            vtotal.setText(valor);
+         }
+        
+        }
+    }//GEN-LAST:event_btncalcActionPerformed
+
+    private void c1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_c1ActionPerformed
+
+    private void c5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c5ActionPerformed
+        // TODO add your handling code here:
+        
+        int parc = 0;
+        double vtot = 0.00;
+        double fret = Double.parseDouble(lblfrete.getText());
+        String valor = "";
+        List<String> compra = new ArrayList();
+        
+         if(radiocartao.isSelected()){
+            
+            parc = Integer.parseInt((String)c5.getSelectedItem());
+            vtot = Double.parseDouble(precoL.getText());
+            fret = Double.parseDouble(lblfrete.getText());
+            vtot = vtot + (parc * 60) + fret;
+            valor = String.valueOf(vtot);
+            
+            vtotal.setText(valor);
+            
+         }else{
+             
+            vtot = Double.parseDouble(precoL.getText());
+            fret = Double.parseDouble(lblfrete.getText());
+            vtot = vtot + fret;
+            valor = String.valueOf(vtot);
+            
+            vtotal.setText(valor);
+         }
+        
+    }//GEN-LAST:event_c5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -674,6 +967,7 @@ public class CompraTenis extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btncalc;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
@@ -682,17 +976,24 @@ public class CompraTenis extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField c3;
     private javax.swing.JFormattedTextField c4;
     private javax.swing.JComboBox<String> c5;
+    private javax.swing.JTextField campo_bairro;
+    private javax.swing.JFormattedTextField campo_cep;
+    private javax.swing.JTextField campo_complemento;
+    private javax.swing.JFormattedTextField campo_cpf;
+    private javax.swing.JTextField campo_nome;
+    private javax.swing.JTextField campo_num;
+    private javax.swing.JTextField campo_rua;
     private javax.swing.JComboBox<String> cmb;
+    private javax.swing.JComboBox<String> cmbquant;
+    private javax.swing.JComboBox<String> cmbtam;
+    private javax.swing.JPasswordField csenha;
     private javax.swing.JLabel d1;
     private javax.swing.JLabel d2;
     private javax.swing.JLabel d3;
     private javax.swing.JLabel d4;
     private javax.swing.JLabel d5;
+    private javax.swing.JLabel d6;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -701,11 +1002,8 @@ public class CompraTenis extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -715,15 +1013,15 @@ public class CompraTenis extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JLabel lblfrete;
+    private javax.swing.JLabel lblfrete1;
     private javax.swing.JLabel precoL;
+    private javax.swing.JLabel precoL1;
     private javax.swing.JRadioButton radiocartao;
+    private javax.swing.JRadioButton radiodebito;
+    private javax.swing.JRadioButton radiodin;
+    private javax.swing.JRadioButton radiopix;
+    private javax.swing.JLabel txtvalortot;
+    private javax.swing.JLabel vtotal;
     // End of variables declaration//GEN-END:variables
 }
