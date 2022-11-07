@@ -7,16 +7,14 @@ package com.mycompany.outleet_tenis;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.text.NumberFormat;
-import java.time.LocalDate;
+import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.text.MaskFormatter;
 
 /**
  *
@@ -29,6 +27,7 @@ public class CompraTenis extends javax.swing.JFrame {
      */
     public CompraTenis() {
         initComponents();
+        camcpf();
     }
 
     /**
@@ -96,6 +95,7 @@ public class CompraTenis extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         vtotal = new javax.swing.JLabel();
         txtvalortot = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("COMPRA DE PRODUTO");
@@ -385,6 +385,11 @@ public class CompraTenis extends javax.swing.JFrame {
         jLabel9.setText("Quantidade");
 
         cmbquant.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", " " }));
+        cmbquant.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbquantActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("CPF");
@@ -484,7 +489,10 @@ public class CompraTenis extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));
 
-        jButton1.setText("Comprar");
+        jButton1.setBackground(new java.awt.Color(0, 153, 0));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("COMPRAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -500,20 +508,32 @@ public class CompraTenis extends javax.swing.JFrame {
         txtvalortot.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtvalortot.setText("R$");
 
+        jButton2.setBackground(new java.awt.Color(255, 51, 51));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("VOLTAR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addGap(17, 17, 17)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel21)
-                .addGap(43, 43, 43)
-                .addComponent(txtvalortot)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtvalortot)
+                .addGap(31, 31, 31)
                 .addComponent(vtotal)
-                .addGap(74, 74, 74)
+                .addGap(35, 35, 35)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(14, 14, 14))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -523,7 +543,8 @@ public class CompraTenis extends javax.swing.JFrame {
                     .addComponent(txtvalortot)
                     .addComponent(vtotal)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21))
+                    .addComponent(jLabel21)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -561,6 +582,7 @@ public class CompraTenis extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        
 // TODO add your handling code here:
+        int quant = Integer.parseInt((String) cmbquant.getSelectedItem());
         int parc = 0;
         double vtot = 0.00;
         double fret = Double.parseDouble(lblfrete.getText());
@@ -580,7 +602,7 @@ public class CompraTenis extends javax.swing.JFrame {
             parc = Integer.parseInt((String)c5.getSelectedItem());
             vtot = Double.parseDouble(precoL.getText());
             fret = Double.parseDouble(lblfrete.getText());
-            vtot = vtot + (parc * 60) + fret;
+            vtot = quant * (vtot + (parc * 60) + fret);
             valor = String.valueOf(vtot);
             
             System.out.println(vtot);
@@ -629,17 +651,18 @@ public class CompraTenis extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
+        new Tela_Login().setVisible(false);
         
        List<String> tenis = new ArrayList();
         
-        File arquivoCSV = new File("C:\\Users\\Honorato\\Documents\\NetBeansProjects\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\tenis.csv");
+        File arquivoCSVv = new File("C:\\Users\\Honorato\\Documents\\NetBeansProjects\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\tenis.csv");
         
         try{          
             
             
             //variavel para receber as linhas por linhas 
             String linhasDoArquivo = new String();           
-            Scanner leitor = new Scanner(arquivoCSV);
+            Scanner leitor = new Scanner(arquivoCSVv);
             
             //Correr todas as linhas do arquivo
             while (leitor.hasNext()){
@@ -709,31 +732,7 @@ public class CompraTenis extends javax.swing.JFrame {
         
         if(!campo_rua.getText().equals("") && !campo_cep.getText().equals("") && !campo_num.getText().equals("") && !campo_bairro.getText().equals("")){
             
-        int parc = 0;
-        double vtot = 0.00;
-        double fret = Double.parseDouble(lblfrete.getText());
-        String valor = "";
-        List<String> compra = new ArrayList();
-        
-         if(radiocartao.isSelected()){
-            
-            parc = Integer.parseInt((String)c5.getSelectedItem());
-            vtot = Double.parseDouble(precoL.getText());
-            fret = Double.parseDouble(lblfrete.getText());
-            vtot = vtot + (parc * 60) + fret;
-            valor = String.valueOf(vtot);
-            
-            vtotal.setText(valor);
-            
-         }else{
-             
-            vtot = Double.parseDouble(precoL.getText());
-            fret = Double.parseDouble(lblfrete.getText());
-            vtot = vtot + fret;
-            valor = String.valueOf(vtot);
-            
-            vtotal.setText(valor);
-         }
+        comp();
             
         }
         
@@ -785,32 +784,7 @@ public class CompraTenis extends javax.swing.JFrame {
     } else{
                     
         lblfrete.setText("20.00");
-            
-        int parc = 0;
-        double vtot = 0.00;
-        double frete = Double.parseDouble(lblfrete.getText());
-        String valor = "";
-        List<String> compra = new ArrayList();
-        
-         if(radiocartao.isSelected()){
-            
-            parc = Integer.parseInt((String)c5.getSelectedItem());
-            vtot = Double.parseDouble(precoL.getText());
-            frete = Double.parseDouble(lblfrete.getText());
-            vtot = vtot + (parc * 60) + frete;
-            valor = String.valueOf(vtot);
-            
-            vtotal.setText(valor);
-            
-         }else{
-             
-            vtot = Double.parseDouble(precoL.getText());
-            frete = Double.parseDouble(lblfrete.getText());
-            vtot = vtot + frete;
-            valor = String.valueOf(vtot);
-            
-            vtotal.setText(valor);
-         }
+        comp();
         
         }
 
@@ -867,45 +841,39 @@ public class CompraTenis extends javax.swing.JFrame {
     } else{
         lblfrete.setText("20.00");
             
-        int parc = 0;
-        double vtot = 0.00;
-        double fret = Double.parseDouble(lblfrete.getText());
-        String valor = "";
-        List<String> compra = new ArrayList();
-        
-         if(radiocartao.isSelected()){
-            
-            parc = Integer.parseInt((String)c5.getSelectedItem());
-            vtot = Double.parseDouble(precoL.getText());
-            fret = Double.parseDouble(lblfrete.getText());
-            vtot = vtot + (parc * 60) + fret;
-            valor = String.valueOf(vtot);
-            
-            vtotal.setText(valor);
-            
-         }else{
-             
-            vtot = Double.parseDouble(precoL.getText());
-            fret = Double.parseDouble(lblfrete.getText());
-            vtot = vtot + fret;
-            valor = String.valueOf(vtot);
-            
-            vtotal.setText(valor);
-         }
+       comp();
         
         }
     }//GEN-LAST:event_btncalcActionPerformed
 
     private void c1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c1ActionPerformed
         // TODO add your handling code here:
+        c1.setText(campo_nome.getText());
     }//GEN-LAST:event_c1ActionPerformed
 
     private void c5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c5ActionPerformed
         // TODO add your handling code here:
         
+        comp();
+        
+    }//GEN-LAST:event_c5ActionPerformed
+
+    private void cmbquantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbquantActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbquantActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+         new Tela_Principal().setVisible(true);
+                    this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void comp(){
+        
+        int quant = Integer.parseInt((String) cmbquant.getSelectedItem());
         int parc = 0;
         double vtot = 0.00;
-        double fret = Double.parseDouble(lblfrete.getText());
+        double frete = Double.parseDouble(lblfrete.getText());
         String valor = "";
         List<String> compra = new ArrayList();
         
@@ -913,8 +881,8 @@ public class CompraTenis extends javax.swing.JFrame {
             
             parc = Integer.parseInt((String)c5.getSelectedItem());
             vtot = Double.parseDouble(precoL.getText());
-            fret = Double.parseDouble(lblfrete.getText());
-            vtot = vtot + (parc * 60) + fret;
+            frete = Double.parseDouble(lblfrete.getText());
+            vtot = quant*(vtot + (parc * 60) + frete);
             valor = String.valueOf(vtot);
             
             vtotal.setText(valor);
@@ -922,15 +890,33 @@ public class CompraTenis extends javax.swing.JFrame {
          }else{
              
             vtot = Double.parseDouble(precoL.getText());
-            fret = Double.parseDouble(lblfrete.getText());
-            vtot = vtot + fret;
+            frete = Double.parseDouble(lblfrete.getText());
+            vtot = quant * (vtot + frete);
             valor = String.valueOf(vtot);
             
             vtotal.setText(valor);
          }
         
-    }//GEN-LAST:event_c5ActionPerformed
-
+    }
+    private void camcpf(){
+        try {
+            
+            MaskFormatter mask_cpf = new MaskFormatter("###.###.###-##");
+            mask_cpf.install(campo_cpf);
+             MaskFormatter maskcep = new MaskFormatter("######-##");
+            maskcep.install(campo_cep);
+             MaskFormatter maskcartao = new MaskFormatter("####  ####  ####  ####");
+            maskcartao.install(c2);
+             MaskFormatter maskval = new MaskFormatter("##/##");
+            maskval.install(c4);
+             MaskFormatter maskseg = new MaskFormatter("###");
+            maskseg.install(c3);
+            
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no preenchimento de campos ", "ERRO !", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -994,6 +980,7 @@ public class CompraTenis extends javax.swing.JFrame {
     private javax.swing.JLabel d5;
     private javax.swing.JLabel d6;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
