@@ -1,6 +1,9 @@
-#### "We see three critical differences between programming and software engineering: time, scale, and the trade-offs at play. On a software engineering project, engineers need to be more concerned with the passage of time and the eventual need for change. In a software engineering organization, we need to be more concerned about scale and efficiency, both for the software we produce as well as for the organization that is producing it. Finally, as software engineers, we are asked to make more complex decisions with higher-stakes outcomes, often based on imprecise estimates of time and growth. Within Google, we sometimes say, “Software engineering is programming integrated over time.” Programming is certainly a significant part of software engineering: after all, programming is how you generate new software in the first place. If you accept this distinction, it also becomes clear that we might need to delineate between programming tasks (development) and software engineering tasks (development, modification, maintenance). The addition of time adds an important new dimension to programming. Cubes aren’t squares, distance isn’t velocity. Software engineering isn’t programming."
+[//]: # (CAPA 3° SPRINT)
 
-> Ambos as funções se complementam, pois a programação necessita da organização da engenharia para atingir os resultados com eficiência. O mercado de tecnologia tempo é extremamente valioso e a arte de programar um software exige tempo e dedicação para atingir os resultados.
+![18](https://user-images.githubusercontent.com/101594950/200389234-7cf1f126-6365-4756-919e-5753aa456c8f.png)
+
+#### OUTLET-WALLACE É UM SISTEMA E-COMMERCE PARA MODA DE CALÇADOS STREETWEAR DESENVOLVIDO EM JAVA COM OBJETIVO DE TREINAR FUNDAMENTOS BÁSICOS DE PROGRAMAÇÃO E ENGENHARIA DE SOFTWARE.
+#### O SISTEMA REGISTRA O CADASTRO DE CALÇADOS, COMPRAS E VENDAS POR MEIO DE UM ARQUIVO CSV PARA QUE FUTURAMENTE POSSA SER GERADO GRÁFICOS E RELATÓRIOS.
 
 #### trade-off - negociação, qualidades diferenciais para cada situação que será empregado
 
@@ -24,3 +27,12 @@
 ![DOC](https://user-images.githubusercontent.com/101594950/186282315-a66c7f78-42d9-4874-86ca-de9b2616d6e3.png)
 
 ![xxx](https://user-images.githubusercontent.com/101594950/189457479-cde7ed8c-6d1d-488a-ab0c-d5067130233b.jpg)
+
+
+
+![19](https://user-images.githubusercontent.com/101594950/200389241-1efb2144-23f9-4cbe-ae29-e8b3370646d4.png)
+![20](https://user-images.githubusercontent.com/101594950/200389243-1b57716f-6c88-4e71-94b0-3d930d3a7e2e.png)
+![21](https://user-images.githubusercontent.com/101594950/200389246-44d1b71a-1fa7-4975-ab16-559e11af2f09.png)
+![22](https://user-images.githubusercontent.com/101594950/200389251-a35f3ee1-db1c-46a2-b7d1-9561dd44e600.png)
+![23](https://user-images.githubusercontent.com/101594950/200389254-2d4ca9f1-d137-4efb-b082-ab411e4d3a03.png)
+![24](https://user-images.githubusercontent.com/101594950/200389256-7dffac9a-c358-4222-8119-dcdf048ea421.png)
