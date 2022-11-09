@@ -4,7 +4,15 @@
 
 ![18](https://user-images.githubusercontent.com/101594950/200389234-7cf1f126-6365-4756-919e-5753aa456c8f.png)
 
-#### OUTLET-WALLACE é um sistema E-Commerce para moda de calçados StreetWear desenvolvido em Java com objetivo de treinar fundamentos básicos de programação e engenharia de software. O sistema registra o cadastro de calçados, compras e vendas por meio de arquivos CSV para que possa ser gerado gráficos e relatórios.
+<details>
+
+**<summary> HYPE DE MILHÕES </summary>**
+
+![DOC](https://user-images.githubusercontent.com/101594950/186282315-a66c7f78-42d9-4874-86ca-de9b2616d6e3.png)
+
+</summary>
+
+</details>
 
 -----------------------------------
 [//]: # (CAPA REQUISITOS FUNCIONAIS ) 
@@ -62,6 +70,8 @@
 
 [//]: # (CAPA TECNOLOGIA ) 
 ![19](https://user-images.githubusercontent.com/101594950/200389241-1efb2144-23f9-4cbe-ae29-e8b3370646d4.png)
+
+![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white) ![NetBeans IDE](https://img.shields.io/badge/NetBeansIDE-1B6AC6.svg?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ---------------------------------------
 
