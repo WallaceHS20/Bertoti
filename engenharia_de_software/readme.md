@@ -43,14 +43,41 @@
 </summary>
 </details>
 
+-------------------------------------
+
+[//]: # (CAPA REQUISITOS SISTEMA E-COMMERCE ) 
+![20](https://user-images.githubusercontent.com/101594950/200389243-1b57716f-6c88-4e71-94b0-3d930d3a7e2e.png)
+
+<details>
+
+**<summary> SEMPRE UM PASSO A FRENTE </summary>**
+
 ![DOC](https://user-images.githubusercontent.com/101594950/186282315-a66c7f78-42d9-4874-86ca-de9b2616d6e3.png)
 
-![xxx](https://user-images.githubusercontent.com/101594950/189457479-cde7ed8c-6d1d-488a-ab0c-d5067130233b.jpg)
+</summary>
 
+</details>
 
+-------------------------------------
+
+[//]: # (CAPA TECNOLOGIA ) 
 ![19](https://user-images.githubusercontent.com/101594950/200389241-1efb2144-23f9-4cbe-ae29-e8b3370646d4.png)
-![20](https://user-images.githubusercontent.com/101594950/200389243-1b57716f-6c88-4e71-94b0-3d930d3a7e2e.png)
+
+---------------------------------------
+
+[//]: # (CAPA MODELO LÓGICO ) 
 ![21](https://user-images.githubusercontent.com/101594950/200389246-44d1b71a-1fa7-4975-ab16-559e11af2f09.png)
 
+<details>
+
+**<summary> AGILIDADE DE HERMES </summary>**
+
+![20](https://user-images.githubusercontent.com/101594950/189457479-cde7ed8c-6d1d-488a-ab0c-d5067130233b.jpg)
+
+</summary>
+
+</details>
+
+-------------------------------------
 
 ![24](https://user-images.githubusercontent.com/101594950/200389256-7dffac9a-c358-4222-8119-dcdf048ea421.png)
