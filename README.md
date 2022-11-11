@@ -8,7 +8,7 @@
 
 **<summary> HYPE DE MILHÕES </summary>**
 
-![DOC](https://user-images.githubusercontent.com/101594950/186282315-a66c7f78-42d9-4874-86ca-de9b2616d6e3.png)
+### O Outlet Wallace  é um sistema de gerenciamento de E-Commerce para moda StreetWear de calçados na qual você eleva seu hype comprando os melhores produtos de forma remota ! O sistema tem como objetivo realizar o treinamento dos fundamentos básicos de programação utilizando Java.
 
 </summary>
 
