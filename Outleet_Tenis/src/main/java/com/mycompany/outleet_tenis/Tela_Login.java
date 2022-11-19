@@ -37,12 +37,12 @@ public class Tela_Login extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        BTNACESSO = new javax.swing.JButton();
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
         campo_usu = new java.awt.TextField();
         campo_senha = new javax.swing.JPasswordField();
-        jButton2 = new javax.swing.JButton();
+        BTNCADASTRAR = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -51,13 +51,13 @@ public class Tela_Login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("ACESSAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BTNACESSO.setBackground(new java.awt.Color(0, 153, 0));
+        BTNACESSO.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BTNACESSO.setForeground(new java.awt.Color(255, 255, 255));
+        BTNACESSO.setText("ACESSAR");
+        BTNACESSO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BTNACESSOActionPerformed(evt);
             }
         });
 
@@ -71,13 +71,13 @@ public class Tela_Login extends javax.swing.JFrame {
 
         campo_senha.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 153));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("CADASTRAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BTNCADASTRAR.setBackground(new java.awt.Color(0, 0, 153));
+        BTNCADASTRAR.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BTNCADASTRAR.setForeground(new java.awt.Color(255, 255, 255));
+        BTNCADASTRAR.setText("CADASTRAR");
+        BTNCADASTRAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BTNCADASTRARActionPerformed(evt);
             }
         });
 
@@ -87,9 +87,9 @@ public class Tela_Login extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(89, 89, 89)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BTNACESSO, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BTNCADASTRAR, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 58, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -119,8 +119,8 @@ public class Tela_Login extends javax.swing.JFrame {
                 .addComponent(campo_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BTNACESSO, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BTNCADASTRAR, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(76, Short.MAX_VALUE))
         );
 
@@ -145,18 +145,23 @@ public class Tela_Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BTNACESSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNACESSOActionPerformed
         // TODO add your handling code here:
         
+        //DIFERENCIADOR PARA VALIDAÇÃO DE LOGIN
         boolean encontrado = true;
         
+        //VALIDAÇÃO DE CAMPOS
         if(campo_usu.getText().equals("") || campo_senha.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Alerta de campo vazio !", "Outleet Informa !", JOptionPane.ERROR_MESSAGE);
         }else{
-            List<String> login = new ArrayList();
-        String con = campo_usu.getText() + ";" + campo_senha.getText();
         
-         File arquivoCSV = new File("C:\\Users\\Honorato\\Documents\\NetBeansProjects\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\usuario.csv");
+        // LISTA PARA ARMAZENAMENTO DE DADOS    
+        List<String> login = new ArrayList();
+        String usuario = campo_usu.getText() + ";" + campo_senha.getText();
+        
+        //LEITURA DO ARQUIVO USUARIO
+         File arquivoCSV = new File("C:\\Users\\Honorato\\Desktop\\faculdade\\Bertoti---Engenharia-de-Software\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\usuario.csv");
         
         try{                     
             //variavel para receber as linhas por linhas 
@@ -172,7 +177,7 @@ public class Tela_Login extends javax.swing.JFrame {
             
             for(String s: login ){
                 
-                if (con.equals(s)){
+                if (usuario.equals(s)){
                     encontrado = true;
                     
                 }else{
@@ -181,31 +186,42 @@ public class Tela_Login extends javax.swing.JFrame {
             }
             
             if (encontrado == true){
+                // USUARIO ENCONTRADO
                 JOptionPane.showMessageDialog(null, "Bem Vindo !", "Outleet Informa !", JOptionPane.INFORMATION_MESSAGE);
                     new Tela_Principal().setVisible(true);
                     this.dispose();
+                    
             }else{
+                //USUARIO NÃO ENCONTRADO
+                System.out.println(encontrado);
                 JOptionPane.showMessageDialog(null, "Usuario ou Senha Incorretos !", "Outleet Informa !", JOptionPane.ERROR_MESSAGE);
             }
             
-            
+                            //USUARIO NÃO ENCONTRADO
+
         }catch(FileNotFoundException e){  
             JOptionPane.showMessageDialog(null, "ERRO !", "Outleet Informa !", JOptionPane.ERROR_MESSAGE);
         }
         }       
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BTNACESSOActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void BTNCADASTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNCADASTRARActionPerformed
         // TODO add your handling code here:
+        
+        //VALIDAÇÃO DE CAMPOS
         if(campo_usu.getText().equals("") || campo_senha.getText().equals("")){
-             JOptionPane.showMessageDialog(null, "Alerta de campo vazio !", "Outleet Informa !", JOptionPane.ERROR_MESSAGE);
+             
+            JOptionPane.showMessageDialog(null, "Alerta de campo vazio !", "Outleet Informa !", JOptionPane.ERROR_MESSAGE);
+        
         }else{
         
-        boolean en = true;
-        List<String> login = new ArrayList();
-        String con = campo_usu.getText() + ";" + campo_senha.getText();
+        //valor para validar cadastro
+        boolean validado = true;
         
-         File arquivoCSV = new File("C:\\Users\\Honorato\\Documents\\NetBeansProjects\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\usuario.csv");
+        List<String> login = new ArrayList();
+        String usuario = campo_usu.getText() + ";" + campo_senha.getText();
+        
+         File arquivoCSV = new File("C:\\Users\\Honorato\\Desktop\\faculdade\\Bertoti---Engenharia-de-Software\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\usuario.csv");
         
         try{          
             
@@ -222,17 +238,19 @@ public class Tela_Login extends javax.swing.JFrame {
             }
                   
             for(String s : login ){
+                //VERIFICA SE O USUARIO JÁ EXISTE
                 
-                if (con.equals(s)){
-                    JOptionPane.showMessageDialog(null, "Usuario Inexistente !", "Outleet Informa !", JOptionPane.ERROR_MESSAGE);
-                    en = false;
+                if (usuario.equals(s)){
+                    JOptionPane.showMessageDialog(null, "USUARIO EXISTENTE !", "Outleet Informa !", JOptionPane.ERROR_MESSAGE);
+                    validado = false;
                 }
             }
             
-            if (en == true){
-
-                login.add(con);
-                PrintWriter pw = new PrintWriter(new File("C:\\Users\\Honorato\\Documents\\NetBeansProjects\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\usuario.csv"));
+            if (validado == true){
+                
+                //usuario é incrementado na lista
+                login.add(usuario);
+                PrintWriter pw = new PrintWriter(new File("C:\\Users\\Honorato\\Desktop\\faculdade\\Bertoti---Engenharia-de-Software\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\usuario.csv"));
                 
                 StringBuilder sb=new StringBuilder();
                 
@@ -241,6 +259,7 @@ public class Tela_Login extends javax.swing.JFrame {
                     sb.append("\r\n");
             }
                 
+                //execução para escrever o arquivo
                  pw.write(sb.toString());
                  pw.close(); 
                  JOptionPane.showMessageDialog(null, "Usuario Cadastrado !", "Outleet Informa !", JOptionPane.INFORMATION_MESSAGE);
@@ -252,7 +271,7 @@ public class Tela_Login extends javax.swing.JFrame {
         }
 
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_BTNCADASTRARActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,10 +312,10 @@ public class Tela_Login extends javax.swing.JFrame {
     private ArrayList<Usuario> usuario;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BTNACESSO;
+    private javax.swing.JButton BTNCADASTRAR;
     private javax.swing.JPasswordField campo_senha;
     private java.awt.TextField campo_usu;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private java.awt.Label label1;

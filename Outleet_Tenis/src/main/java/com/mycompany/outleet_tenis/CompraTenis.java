@@ -589,6 +589,8 @@ public class CompraTenis extends javax.swing.JFrame {
         String valor = "";
         List<String> compra = new ArrayList();
         
+        
+        // VALIDAÇÃO FRETE
         if (fret == 0.00){
             System.out.println("vazio");
             JOptionPane.showMessageDialog(null,
@@ -597,6 +599,7 @@ public class CompraTenis extends javax.swing.JFrame {
            
         }else{
             
+            // CALCULO CASO COMPRA SEJA EFETUADA NO CARTÃO
             if(radiocartao.isSelected()){
             
             parc = Integer.parseInt((String)c5.getSelectedItem());
@@ -605,22 +608,23 @@ public class CompraTenis extends javax.swing.JFrame {
             vtot = quant * (vtot + (parc * 60) + fret);
             valor = String.valueOf(vtot);
             
-            System.out.println(vtot);
-            
         }         
             try {
                 
-                 File arquivoCSV = new File("C:\\Users\\Honorato\\Documents\\NetBeansProjects\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\compra.csv");
+                
+                //LEITURA DO ARQUIVO COMPRA CSV
+                 File arquivoCSV = new File("C:\\Users\\Honorato\\Desktop\\faculdade\\Bertoti---Engenharia-de-Software\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\compra.csv");
                  String linhasDoArquivo = new String();           
                  Scanner leitor = new Scanner(arquivoCSV);
-            
+                 
+                 //RECPTOR DE DADOS
                  while (leitor.hasNext()){
                 
                     linhasDoArquivo = leitor.nextLine();
                     compra.add(linhasDoArquivo);
                     
             }
-                 
+                 //INSERÇÃO NA LISTA COM NOVO VALOR
                  if (radiocartao.isSelected() || radiodebito.isSelected()){
                      compra.add(campo_nome.getText() + ";" + campo_cpf.getText() + ";" + cmb.getSelectedItem() + ";" + valor + ";" + c2.getText() + ";" + c5.getSelectedItem() + ";" + campo_rua.getText() + ", " + campo_num.getText()+ ", " + campo_bairro.getText() + ", " + campo_cep.getText() + ", " + campo_complemento.getText());
                  }
@@ -629,7 +633,8 @@ public class CompraTenis extends javax.swing.JFrame {
                      compra.add(campo_nome.getText() + ";" + campo_cpf.getText() + ";" + cmb.getSelectedItem() + ";" + valor + ";" + "---" + ";" + "---" + ";" + campo_rua.getText() + ", " + campo_num.getText()+ ", " + campo_bairro.getText() + ", " + campo_cep.getText() + ", " + campo_complemento.getText());
                  }
                 
-                PrintWriter pw = new PrintWriter(new File("C:\\Users\\Honorato\\Documents\\NetBeansProjects\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\compra.csv"));
+                //ESCRITURA NO ARQUIVO CSV
+                PrintWriter pw = new PrintWriter(new File("C:\\Users\\Honorato\\Desktop\\faculdade\\Bertoti---Engenharia-de-Software\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\compra.csv"));
                 
                 StringBuilder sb=new StringBuilder();
                 
@@ -651,15 +656,14 @@ public class CompraTenis extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-        new Tela_Login().setVisible(false);
         
+        //CARREGAMENTO DOS ITENS DO TENIS NA COMBOBOX
        List<String> tenis = new ArrayList();
         
-        File arquivoCSVv = new File("C:\\Users\\Honorato\\Documents\\NetBeansProjects\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\tenis.csv");
+        File arquivoCSVv = new File("C:\\Users\\Honorato\\Desktop\\faculdade\\Bertoti---Engenharia-de-Software\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\tenis.csv");
         
         try{          
-            
-            
+              
             //variavel para receber as linhas por linhas 
             String linhasDoArquivo = new String();           
             Scanner leitor = new Scanner(arquivoCSVv);
@@ -677,6 +681,8 @@ public class CompraTenis extends javax.swing.JFrame {
 
     private void cmbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbActionPerformed
         // TODO add your handling code here:
+        
+        //GERADOR DE PREÇO AO ESCOLHER ITEM
         List<String> tenis = new ArrayList();
         List<String> preco = new ArrayList();
         String iten = (String) cmb.getSelectedItem();
@@ -684,7 +690,7 @@ public class CompraTenis extends javax.swing.JFrame {
         int cont = 0, idp = 0;
         
         
-        File arquivoCSV = new File("C:\\Users\\Honorato\\Documents\\NetBeansProjects\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\tenis.csv");
+        File arquivoCSV = new File("C:\\Users\\Honorato\\Desktop\\faculdade\\Bertoti---Engenharia-de-Software\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\tenis.csv");
         
         try{                      
             //variavel para receber as linhas por linhas 
@@ -698,6 +704,7 @@ public class CompraTenis extends javax.swing.JFrame {
                 tenis.add(linhasDoArquivo);
             }
             
+            // VALIDAÇÃO COM CONTADOR PARA EXIBIR PRECO DE ACORDO COM TENIS ESCOLHIDO
             
             for (String x : tenis){
                 
@@ -706,12 +713,11 @@ public class CompraTenis extends javax.swing.JFrame {
                 }               
                 cont += 1;               
             }
-            System.out.println(idp);
             
         }catch(FileNotFoundException e){   
         }
         
-        File arqCSV = new File("C:\\Users\\Honorato\\Documents\\NetBeansProjects\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\preco_tenis.csv");
+        File arqCSV = new File("C:\\Users\\Honorato\\Desktop\\faculdade\\Bertoti---Engenharia-de-Software\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\preco_tenis.csv");
         
         try{                      
             //variavel para receber as linhas por linhas 
@@ -740,6 +746,8 @@ public class CompraTenis extends javax.swing.JFrame {
 
     private void radiocartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiocartaoActionPerformed
         // TODO add your handling code here:
+        
+        //VALIDAÇÃO DE CARTAO DE CREDITO SEM FRETE
          double fret = Double.parseDouble(lblfrete.getText());
         if (fret == 0.00){
             System.out.println("vazio");
@@ -760,6 +768,7 @@ public class CompraTenis extends javax.swing.JFrame {
     private void radiodebitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiodebitoActionPerformed
         // TODO add your handling code here:
         
+        //VALIDAÇÃO DE CARTAO DE DEBITO SEM FRETE
         double fret = Double.parseDouble(lblfrete.getText());
         if (fret == 0.00){
             System.out.println("vazio");
@@ -793,6 +802,8 @@ public class CompraTenis extends javax.swing.JFrame {
     private void radiodinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiodinActionPerformed
         // TODO add your handling code here:
         
+        //OPÇÃO DE COMPRA COM BOLETO BANCARIO
+        
          double fret = Double.parseDouble(lblfrete.getText());
         if (fret == 0.00){
             System.out.println("vazio");
@@ -806,12 +817,19 @@ public class CompraTenis extends javax.swing.JFrame {
         c2.show(Boolean.FALSE);
         c3.show(Boolean.FALSE);
         c4.show(Boolean.FALSE);
+        csenha.show(Boolean.FALSE);
         c5.enable(false);
+        
+         JOptionPane.showMessageDialog(null,
+                "CÓDIGO BOLETO: 8764099219979785124823715036606012227371", "WALLACE INFORMA:",
+                JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_radiodinActionPerformed
 
     private void radiopixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiopixActionPerformed
         // TODO add your handling code here:
+        
+        //OPÇÃO DE COMPRA COM PIX
         
         double fret = Double.parseDouble(lblfrete.getText());
         if (fret == 0.00){
@@ -827,11 +845,18 @@ public class CompraTenis extends javax.swing.JFrame {
         c3.show(Boolean.FALSE);
         c4.show(Boolean.FALSE);
         c5.enable(false);
+        
+         JOptionPane.showMessageDialog(null,
+                "CHAVE PIX: 9TatHPSn4#FcBs8O4!L8KKd78dSOgeyPdq8", "WALLACE INFORMA:",
+                JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_radiopixActionPerformed
 
     private void btncalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncalcActionPerformed
         // TODO add your handling code here:
+        
+        //SETAGEM DO VALOR DE FRETE
+        
         if (campo_rua.getText().equals("") || campo_bairro.getText().equals("") || campo_cep.getText().equals("") || campo_num.getText().equals("") || campo_rua.getText().equals("")){
         
              JOptionPane.showMessageDialog(null,
@@ -869,6 +894,8 @@ public class CompraTenis extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void comp(){
+        
+        //FUNÇÃO PARA CRIAÇÃO DE MÁSCARAS
         
         int quant = Integer.parseInt((String) cmbquant.getSelectedItem());
         int parc = 0;

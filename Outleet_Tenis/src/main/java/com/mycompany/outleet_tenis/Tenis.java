@@ -9,13 +9,17 @@ package com.mycompany.outleet_tenis;
  * @author Honorato
  */
 public class Tenis {
-    
-    private String nome;
-    private String cor;
-    private String marca;
-    private Float preco;
-    private int quant_est;
-    private String id_tenis;
+
+    public Tenis(String nome, String cor, String marca, String preco) {
+        this.nome = nome;
+        this.cor = cor;
+        this.marca = marca;
+        this.preco = preco;
+    }
+
+    Tenis() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     public String getNome() {
         return nome;
@@ -41,29 +45,18 @@ public class Tenis {
         this.marca = marca;
     }
 
-    public Float getPreco() {
+    public String getPreco() {
         return preco;
     }
 
-    public void setPreco(Float preco) {
+    public void setPreco(String preco) {
         this.preco = preco;
     }
-
-    public int getQuant_est() {
-        return quant_est;
-    }
-
-    public void setQuant_est(int quant_est) {
-        this.quant_est = quant_est;
-    }
-
-    public String getId_tenis() {
-        return id_tenis;
-    }
-
-    public void setId_tenis(String id_tenis) {
-        this.id_tenis = id_tenis;
-    }
+    
+    String nome;
+    String cor;
+    String marca;
+    String preco;
   
 }
 

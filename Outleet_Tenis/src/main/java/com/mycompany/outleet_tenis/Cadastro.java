@@ -5,6 +5,7 @@
 package com.mycompany.outleet_tenis;
 
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -41,12 +42,14 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        BotaoCadastrar = new javax.swing.JButton();
         cmbtam = new javax.swing.JComboBox<>();
         campo_cor = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CADASTRO DE TÊNIS");
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -70,13 +73,13 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("NOME DO PRODUTO:");
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("CADASTRAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BotaoCadastrar.setBackground(new java.awt.Color(102, 102, 255));
+        BotaoCadastrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BotaoCadastrar.setForeground(new java.awt.Color(255, 255, 255));
+        BotaoCadastrar.setText("CADASTRAR");
+        BotaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BotaoCadastrarActionPerformed(evt);
             }
         });
 
@@ -84,6 +87,16 @@ public class Cadastro extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("TAMANHO");
+
+        jButton2.setBackground(new java.awt.Color(255, 51, 51));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("VOLTAR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -93,33 +106,38 @@ public class Cadastro extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(250, 250, 250)
-                        .addComponent(jLabel2))
+                        .addComponent(campo_nome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cmb_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campo_cor, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmbtam, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(campo_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(campo_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(cmb_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel1)
+                                .addGap(386, 386, 386)
+                                .addComponent(jLabel2))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(campo_cor, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3))
+                                .addGap(32, 32, 32)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cmbtam, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5))
+                                .addGap(30, 30, 30)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(campo_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(BotaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 7, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -134,11 +152,13 @@ public class Cadastro extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campo_cor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbtam)
-                    .addComponent(campo_preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(campo_cor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cmbtam)
+                        .addComponent(campo_preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -148,7 +168,8 @@ public class Cadastro extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,14 +179,18 @@ public class Cadastro extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BotaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarActionPerformed
         // TODO add your handling code here:
         
+        //LISTA PARA RECEBER OS DADOS
         List<String> tenis = new ArrayList<>();
+        List<String> preco = new ArrayList<>();
         
-        if ("".equals(campo_nome.getText())){
+        //VERIFICAÇÃO PARA CAMPO VAZIO
+        if ("".equals(campo_nome.getText()) && "".equals(campo_preco.getText()) && "".equals(campo_cor.getText())){
             
             JOptionPane.showMessageDialog(null, "PREENCHA TODOS OS CAMPOS !", "Outleet Informa !", JOptionPane.ERROR_MESSAGE);
             
@@ -173,7 +198,10 @@ public class Cadastro extends javax.swing.JFrame {
             
             try {
                 
-                 File arquivoCSV = new File("C:\\Users\\wallace.silva\\Desktop\\Trabalhos de Escola\\bertoti\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\tenis.csv");
+                // ---------------------------- ESCREVER TÊNIS -----------------------------------------
+                
+                //LEITURA DO ARQUIVO CSV PARA RECEBER OS DADOS DO TENIS
+                 File arquivoCSV = new File("C:\\Users\\Honorato\\Desktop\\faculdade\\Bertoti---Engenharia-de-Software\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\tenis.csv");
                  String linhasDoArquivo = new String();           
                  Scanner leitor = new Scanner(arquivoCSV);
             
@@ -181,29 +209,79 @@ public class Cadastro extends javax.swing.JFrame {
                 
                     linhasDoArquivo = leitor.nextLine();
                     tenis.add(linhasDoArquivo);
+                    
             }
                  
-                 Tenis prod = new Tenis();
-                 prod.setNome(campo_nome.getText());
-                 prod.setMarca((String) cmb_marca.getSelectedItem());
-                 prod.setCor(campo_cor.getText());
+                //INSERINDO NA LISTA 
+                tenis.add(campo_nome.getText() + ";" + cmb_marca.getSelectedItem() + ";" + campo_cor.getText());
+                
+                //System.out.println(prod.getNome());
                  
-                 tenis.add(prod.getNome() + ";" + prod.getMarca() + ";" + prod.getCor());       
+                PrintWriter pw = new PrintWriter(new File("C:\\Users\\Honorato\\Desktop\\faculdade\\Bertoti---Engenharia-de-Software\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\tenis.csv"));
+                
+                StringBuilder sb = new StringBuilder();
+                
+                //LEITURA DOS PRODUTOS
+                for (String calcado : tenis){
+                    sb.append(calcado);
+                    sb.append("\r\n");
+            }
+                
+                //execução para escrever o arquivo
+                 pw.write(sb.toString());
+                 pw.close(); 
+            
+                 //-----------------------------     ESCREVER PREÇO        --------------------------------
                  
-                 System.out.println(tenis);
+                 //LEITURA DO ARQUIVO CSV PARA RECEBER OS DADOS DO PRECOS
+                 File arquivoCSVpreco = new File("C:\\Users\\Honorato\\Desktop\\faculdade\\Bertoti---Engenharia-de-Software\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\preco_tenis.csv");
+                 String linhasDoArquivoz = new String();           
+                 Scanner leitorz = new Scanner(arquivoCSVpreco);
+            
+                 while (leitorz.hasNext()){
+                
+                    linhasDoArquivoz = leitorz.nextLine();
+                    preco.add(linhasDoArquivoz);
+                    
+            }
                  
-                 
+                //INSERINDO NA LISTA 
+                
+                preco.add(campo_preco.getText());
+                
+                PrintWriter pwz = new PrintWriter(new File("C:\\Users\\Honorato\\Desktop\\faculdade\\Bertoti---Engenharia-de-Software\\Outleet_Tenis\\src\\main\\java\\com\\mycompany\\outleet_tenis\\preco_tenis.csv"));
+                
+                StringBuilder sbz = new StringBuilder();
+                
+                //LEITURA DOS PRECOS
+                for (String valor : preco){
+                    sbz.append(valor);
+                    sbz.append("\r\n");
+            }
+                
+                //execução para escrever o arquivo
+                 pwz.write(sbz.toString());
+                 pwz.close(); 
+              
+                 JOptionPane.showMessageDialog(null, "NOVO TÊNIS CADASTRADO", "Outleet Informa !", JOptionPane.INFORMATION_MESSAGE);
+            
         }catch (Exception e){
             
-            JOptionPane.showMessageDialog(null, "PREENCHA", "Outleet Informa !", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "ERRO NA TENTATIVA DE CADASTRO !", "Outleet Informa !", JOptionPane.ERROR_MESSAGE);
         }
         
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BotaoCadastrarActionPerformed
 
     private void cmb_marcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_marcaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmb_marcaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        new Tela_Principal().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,13 +319,14 @@ public class Cadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoCadastrar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField campo_cor;
     private javax.swing.JTextField campo_nome;
     private javax.swing.JTextField campo_preco;
     private javax.swing.JComboBox<String> cmb_marca;
     private javax.swing.JComboBox<String> cmbtam;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
