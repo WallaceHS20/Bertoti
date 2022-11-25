@@ -89,5 +89,3 @@
 </details>
 
 -------------------------------------
-
-![24](https://user-images.githubusercontent.com/101594950/200389256-7dffac9a-c358-4222-8119-dcdf048ea421.png)
