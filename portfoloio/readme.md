@@ -28,65 +28,60 @@
 <h3>ROCK PLANNING</h3>
   
 <h4>3º Semestre • <a href="https://github.com/B1nary-Devs/DOM-ROCK">Repositório Github</a></h4>
-<p align="justify">Parceiro Acadêmico: <a href="https://www.domrock.net/">DOM ROCK</a></p>
+<p align="justify">Empresa Parceira: <a href="https://www.domrock.net/">DOM ROCK</a></p>
 
 <p align="center"><img src="https://github.com/WallaceHS20/Bertoti---Engenharia-de-Software/assets/101594950/cede74e7-daaa-454b-ba81-e2775b8713a1" widht="20%"></img>
-<p align="justify">POC, <a href="https://github.com/MikeBBatista/pi-fatec-java">Processos Otimizados de Contas</a>, é uma aplicação que facilita e otimiza a inserção de informações de contas despradonizadas de energia e água. Devido a grande diversidade de layouts nas contas de água e energia no Brasil, a digitalização dos dados de interesse para empresa, torna-se uma tarefa árdua e dispendiosa.</p>
-<p align="justify">Dessa forma, a aplicação POC tem o objetivo de facilitar o trabalho com a digitação de dados fornecendo uma plataforma simples, objetiva, exclusiva e funcional.</p>
-<h3>Arquitetura do Projeto </h3>
-<p align="center"><img src="https://github.com/guiftavares/PorfolioBancoDeDados/blob/main/2Sem/arquitetura_poc.png"></img></p>
-<br>
-<h3>Prévia da Solução </h3>
-<p align="justify">Com o objetivo de padronizar a inserção de dados das contas de água e energia, a aplicação desktop possibilita o cadastro de clientes e fornecedores de energia e/ou água, facilitando a obtenção dessas informações ao cadastrar uma nova conta. Além disso, a aplicação necessita apenas que o digitador insira os dados de interesse das contas de energia e/ou água, agilizando o processo de digitação.</p>
-<details>
-  <summary><b>Funcionalidade Cadastrar Fornecedor e Conta</b></summary>
-  <br>
-  <table align="center">
-    <tr>
-      <td alignt="center"><img src="https://github.com/guiftavares/PorfolioBancoDeDados/blob/main/2Sem/poc_app.gif" alt=""/>
-      </td>     
-    </tr>
-  </table>
-</details>
-<p align="justify"> Para facilitar a obtenção de informações e agilizar o processo de digitação dos dados, foi adicionado junto à aplicação a API dos correios que traz os dados de endereço a partir do CEP do cliente.</p>
-<details>
-  <summary><b>Detalhe API dos correios na funcionalidade cadastro de cliente</b></summary>
-  <br>
-  <table align="center">
-    <tr>
-      <td alignt="center"><img src="https://github.com/guiftavares/PorfolioBancoDeDados/blob/main/2Sem/api_correios.gif" alt=""/>
-      </td>     
-    </tr>
-  </table>
-</details>
-<p align="justify">Por fim, o usuário poderá realizar a edição das informações de cliente, fornecedor e conta de acordo com suas necessidades, realizando uma busca em nosso banco de dados</p>
-<details>
-  <summary><b>Funcionalidade Edição de Cliente, Fornecedor e/ou Conta</b></summary>
-  <br>
-  <table align="center">
-    <tr>
-      <td alignt="center"><img src="https://github.com/guiftavares/PorfolioBancoDeDados/blob/main/2Sem/edit_poc.gif" alt=""/>
-      </td>     
-    </tr>
-  </table>
-</details>
-<br>
-<h3>Tecnologias Utilizadas </h3>
+
+<p align="justify"> A Rock Planning é uma aplicação web que visa gerenciar as vendas, considerando o histórico do vendedor, o planejamento e as vendas realizadas. Deverá apresentar um comparativo dos dados mencionados anteriormente para que possam ser analisados de forma precisa e detalhada. Além disso, a aplicação será aprimorada com a adição de uma predição gerada por um algoritmo de Inteligência Artificial pré-existente, a fim de proporcionar maior precisão e confiabilidade.</p>
+
+<h3> <a name="Objetivo">Objetivo</a> </h3>
+
+#### Após a finalização do projeto pela equipe B1naryDevs:
+* O Administrador é capaz de cadastrar vendedores e a carteira de clientes;
+* O Vendedor conseguirá planejar as vendas para seus clientes;
+* O Administrador conseguirá monitorar as vendas de todos os vendedores através de um Dashboard;
+* O Vendedor conseguirá monitorar suas respectivas vendas através de um dashboard.
+
+<h3>Tecnologias Utilizadas no Projeto</h3>
+
+<div align='center'>
+
+<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" target="_blank"><img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" target="_blank"><img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
+
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" target="_blank"><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" target="_blank"><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" target="_blank"><img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" target="_blank"><img src="https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" target="_blank">
+
+</div>
+
 <p align="justify"><a href="https://www.java.com/pt-BR/">Java SE 14:</a> linguagem para desenvolvimento da aplicação para front-end e back-end.</p>
 <p align="justify"><a href="https://www.mysql.com/">MySQL:</a> SGBD para desenvolvimento do Banco de Dados.</p>
 <p align="justify"><a href="https://dev.mysql.com/downloads/connector/j/">MySQL Connector/J:</a> utilizado para conexão entre o banco de dados e o back-end da aplicação.</p>
 <p align="justify"><a href="https://www.eclipse.org/downloads/packages/release/oxygen/3a/eclipse-ide-java-developers">Eclipse Java:</a> IDE utilizada para a programação da aplicação.</p>
 <br>
-<h3>Contribuições Pessoais </h3>
-<p align="justify">Desempenhei o papel de Product Owner, realizando o levantamente dos requisitos para construção do backlog do produto, 
-fui responsável pela criação e prototipação das wireframes e avancei nos estudos de UX/UI. Além disso, fui responsável pelo desenvolvimento e arquitetura e construção de classes da funcionalidade cadastro de fornecedor, manipulação de objetos e criação de telas utilizando JAVA e o GUI Builder da IDE Eclipse. Sendo as atividades desempenhadas:</p>
+<h3>Minhas Contribuições</h3>
+<p align="justify">Ao longo do desenvolvimento do projeto, fui designado o Scruum Master da equipe elaborando tasks, gerenciando a produtividade da equipe e gestão de atividades. Também atuei como desenvolvedor front-end contribuindo com arquitetura e estilização de páginas, desenvolvimento de eventos DOM e requisições HTTPS.</p>
+
+### Principais Contribuições
 <ul>
-  <li>Definição dos requisitos.</li>
-  <li>UX/UI design.</li>
-  <li>Prototipação das wireframes.</li>
-  <li>Arquitetura da aplicação.</li>
-  <li>Desenvolvimento, construção de classes e manipulação dos objetos.</li>
-  <li>Desenvolvimento front-end utilizando GUI Builder</li>
+  <li>Distribuições de tarefas.</li>
+  <li>Arquitetura e estilização das páginas.</li>
+  
+  ~~~javascript
+<table class="table" id="Id_tabela_reg">
+    <thead>
+        <tr>
+            <!--TITULO FIXO NAO DEVE SER ALTERADO-->
+            <th scope="col">ID</th>
+            <th scope="col">Cliente</th>
+            <th scope="col" >Produto</th>
+            <th scope="col">Data de Registro</th>
+            <th scope="col" colspan="2"></th>
+        </tr>
+    </thead>
+    <tbody>
+    
+    </tbody>
+  </table>
+  ~~~
 </ul>
 <br>
 <h3>Lições Aprendidas </h3>
