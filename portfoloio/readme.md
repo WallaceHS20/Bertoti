@@ -58,14 +58,14 @@
 <p align="justify"><a href="https://www.eclipse.org/downloads/packages/release/oxygen/3a/eclipse-ide-java-developers">Eclipse Java:</a> IDE utilizada para a programação da aplicação.</p>
 <br>
 <h3>Minhas Contribuições</h3>
-<p align="justify">Ao longo do desenvolvimento do projeto, fui designado o Scruum Master da equipe elaborando tasks, gerenciando a produtividade da equipe e gestão de atividades. Também atuei como desenvolvedor front-end contribuindo com arquitetura e estilização de páginas, desenvolvimento de eventos DOM e requisições HTTPS.</p>
+<p align="justify">Ao longo do desenvolvimento do projeto, fui designado o Scruum Master da equipe elaborando tasks, gerenciando a produtividade da equipe e gestão de atividades. Também atuei como desenvolvedor front-end contribuindo com arquitetura e estilização de páginas.</p>
 
 ### Principais Contribuições
 <ul>
   <li>Distribuições de tarefas.</li>
-  <li>Arquitetura e estilização das páginas.</li>
+  <li>Desenvolvimento de páginas utilizando linguagem de marcação HTML</li>
   
-  ~~~javascript
+  ~~~HTML
 <table class="table" id="Id_tabela_reg">
     <thead>
         <tr>
@@ -82,10 +82,20 @@
     </tbody>
   </table>
   ~~~
+
+  ~~~CSS
+  tr:hover {
+      background-color: #f5f5f5;
+      transform: scale(1.02);
+      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+  }
+  ~~~
+
 </ul>
 <br>
-<h3>Lições Aprendidas </h3>
-<p align="justify">Tive o meu primeiro contato com programação em Java, programação orientada à objetos e modelagem de banco de dados. Além disso, pude avançar em relação aos meus estudos como Product Owner e UX/UI designer.</p>
+
+<h3>Conhecimentos Obtidos</h3>
+<p align="justify">O desenvovimento do projeto Rock Planning me concedeu os primeiros contatos com o desenvolvimento o qual despertei profundo interesse em me tornar desenvolvedor front-end.</p>
 <h3>Hard Skills </h3>
 <details>
   <summary><b>Clique para ver a lista de hard skills</b></summary>
