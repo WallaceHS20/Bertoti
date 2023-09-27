@@ -61,11 +61,17 @@
 <p align="justify">Ao longo do desenvolvimento do projeto, fui designado o Scruum Master da equipe elaborando tasks, gerenciando a produtividade da equipe e gestão de atividades. Também atuei como desenvolvedor front-end contribuindo com arquitetura e estilização de páginas.</p>
 
 ### Principais Contribuições
-<ul>
-  <li>Distribuições de tarefas.</li>
-  <li>Desenvolvimento de páginas utilizando linguagem de marcação HTML</li>
+1. Distribuições de tarefas.
   
-  ~~~HTML
+  <img width="907" alt="Captura de tela 2023-09-27 194721" src="https://github.com/WallaceHS20/Bertoti---Engenharia-de-Software/assets/101594950/2d7745b4-4556-497b-abd1-ea40c6b91009">
+
+<br>
+  
+2. Desenvolvimento de páginas utilizando linguagem de marcação HTML
+  
+~~~HTML
+
+<!-- EXEMPLO DE TABELA -->
 <table class="table" id="Id_tabela_reg">
     <thead>
         <tr>
@@ -84,6 +90,7 @@
   ~~~
 
   ~~~CSS
+  /* EXEMPLO DE ANIMAÇÃO DA TABELA */
   tr:hover {
       background-color: #f5f5f5;
       transform: scale(1.02);
@@ -91,11 +98,11 @@
   }
   ~~~
 
-</ul>
+
 <br>
 
 <h3>Conhecimentos Obtidos</h3>
-<p align="justify">O desenvovimento do projeto Rock Planning me concedeu os primeiros contatos com o desenvolvimento o qual despertei profundo interesse em me tornar desenvolvedor front-end.</p>
+<p align="justify">O desenvovimento do projeto Rock Planning me concedeu os primeiros contatos com o desenvolvimento front-end o qual despertei profundo interesse em me tornar desenvolvedor front-end.</p>
 <h3>Hard Skills </h3>
 <details>
   <summary><b>Clique para ver a lista de hard skills</b></summary>
