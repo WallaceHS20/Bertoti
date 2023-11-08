@@ -29,8 +29,8 @@
 
 </div>
 
-<p align="justify">Java SE 14: linguagem para desenvolvimento da aplicação para front-end e back-end.</p>
-<p align="justify">MSQL: SGBD para desenvolvimento do Banco de Dados.</p>
+<p align="justify"> <strong>Java SE 14:</strong> linguagem para desenvolvimento da aplicação para front-end e back-end.</p>
+<p align="justify"><strong></strong>MSQL: SGBD para desenvolvimento do Banco de Dados.</p>
 <p align="justify">Spring Boot 3: Framework web responsável pelo gerenciamento de microsserviços. 
 <br>
 <h3>Minhas Contribuições</h3>
