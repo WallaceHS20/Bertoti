@@ -1,34 +1,11 @@
-# Meus Projetos Acadêmicos
-
-<div align='center'>
-
-<br>
-
-<details>
-  
-<summary> SOBRE O PROJETO </summary>  
-
-<div align='start'>
-  
-#### A Rock Planning é uma aplicação web que visa gerenciar as vendas, considerando o histórico do vendedor, o planejamento e as vendas realizadas. Deverá apresentar um comparativo dos dados mencionados anteriormente para que possam ser analisados de forma precisa e detalhada. Além disso, a aplicação será aprimorada com a adição de uma predição gerada por um algoritmo de Inteligência Artificial pré-existente, a fim de proporcionar maior precisão e confiabilidade.
-
-</div>
-
-#### teste
-  
-</summary>  
-
-</details>
-
-</div>
-
-------------------
-
 <div class="semestre3">
+
+<div align=center>
 <h3>ROCK PLANNING</h3>
+</div>
   
-<h4>3º Semestre • <a href="https://github.com/B1nary-Devs/DOM-ROCK">Repositório Github</a></h4>
-<p align="justify">Empresa Parceira: <a href="https://www.domrock.net/">DOM ROCK</a></p>
+<h4> 3º Semestre • <a href="https://github.com/B1nary-Devs/DOM-ROCK">Repositório Github</a></h4>
+<p align="justify"> Empresa Parceira • <a href="https://www.domrock.net/">DOM ROCK</a></p>
 
 <p align="center"><img src="https://github.com/WallaceHS20/Bertoti---Engenharia-de-Software/assets/101594950/cede74e7-daaa-454b-ba81-e2775b8713a1" widht="20%"></img>
 
@@ -52,10 +29,9 @@
 
 </div>
 
-<p align="justify"><a href="https://www.java.com/pt-BR/">Java SE 14:</a> linguagem para desenvolvimento da aplicação para front-end e back-end.</p>
-<p align="justify"><a href="https://www.mysql.com/">MySQL:</a> SGBD para desenvolvimento do Banco de Dados.</p>
-<p align="justify"><a href="https://dev.mysql.com/downloads/connector/j/">MySQL Connector/J:</a> utilizado para conexão entre o banco de dados e o back-end da aplicação.</p>
-<p align="justify"><a href="https://www.eclipse.org/downloads/packages/release/oxygen/3a/eclipse-ide-java-developers">Eclipse Java:</a> IDE utilizada para a programação da aplicação.</p>
+<p align="justify">Java SE 14: linguagem para desenvolvimento da aplicação para front-end e back-end.</p>
+<p align="justify">MSQL: SGBD para desenvolvimento do Banco de Dados.</p>
+<p align="justify">Spring Boot 3: Framework web responsável pelo gerenciamento de microsserviços. 
 <br>
 <h3>Minhas Contribuições</h3>
 <p align="justify">Ao longo do desenvolvimento do projeto, fui designado o Scruum Master da equipe elaborando tasks, gerenciando a produtividade da equipe e gestão de atividades. Também atuei como desenvolvedor front-end contribuindo com arquitetura e estilização de páginas.</p>
@@ -65,7 +41,7 @@
   
   <img width="907" alt="Captura de tela 2023-09-27 194721" src="https://github.com/WallaceHS20/Bertoti---Engenharia-de-Software/assets/101594950/2d7745b4-4556-497b-abd1-ea40c6b91009">
 
-<br>
+<br> <br> 
   
 2. Desenvolvimento de páginas utilizando linguagem de marcação HTML
   
@@ -89,20 +65,12 @@
   </table>
   ~~~
 
-  ~~~CSS
-  /* EXEMPLO DE ANIMAÇÃO DA TABELA */
-  tr:hover {
-      background-color: #f5f5f5;
-      transform: scale(1.02);
-      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
-  }
-  ~~~
-
+https://user-images.githubusercontent.com/101594950/233888446-d92a9d1f-cef3-47ce-9780-4856b17ec2ab.mp4
 
 <br>
 
 <h3>Conhecimentos Obtidos</h3>
-<p align="justify">O desenvovimento do projeto Rock Planning me concedeu os primeiros contatos com o desenvolvimento front-end o qual despertei profundo interesse em me tornar desenvolvedor front-end.</p>
+<p align="justify">O desenvolvimento do projeto Rock Planning foi o meu primeiro contato com o desenvolvimento front-end. A experiência despertou em mim um profundo interesse em me tornar um desenvolvedor front-end.</p>
 <h3>Hard Skills </h3>
 <details>
   <summary><b>Clique para ver a lista de hard skills</b></summary>
@@ -114,31 +82,19 @@
     </tr>
     <tr>
       <td>Java</td>
-      <td>★★★★☆☆☆☆☆☆</td>
+      <td>★★★☆☆☆</td>
     </tr>
     <tr>
       <td>Front-end</td>
-      <td>★★★☆☆☆☆☆☆☆</td>
-    </tr>
-    <tr>
-      <td>Modelagem de Banco de Dados</td>
-      <td>★★★★☆☆☆☆☆☆</td>
+      <td>★★★★☆☆</td>
     </tr>
     <tr>
       <td>MySQL</td>
-      <td>★★★★★☆☆☆☆☆</td>
+      <td>★★★☆☆☆</td>
     </tr>
     <tr>
-      <td>Figma</td>
-      <td>★★★★★☆☆☆☆☆</td>
-    </tr>
-    <tr>
-      <td>Scrum - Product Owner</td>
-      <td>★★★★★☆☆☆☆☆</td>
-    </tr>
-    <tr>
-      <td>UX/UI design</td>
-      <td>★★★★☆☆☆☆☆☆</td>
+      <td>Scrum Master</td>
+      <td>★★★★☆☆</td>
     </tr>
   </table>
 </details>
