@@ -30,47 +30,79 @@
 </div>
 
 <p align="justify"> <strong>Java SE 14:</strong> linguagem para desenvolvimento da aplicação para front-end e back-end.</p>
-<p align="justify"><strong></strong>MSQL: SGBD para desenvolvimento do Banco de Dados.</p>
-<p align="justify">Spring Boot 3: Framework web responsável pelo gerenciamento de microsserviços. 
+<p align="justify"><strong>MSQL:</strong> SGBD para desenvolvimento do Banco de Dados.</p>
+<p align="justify"><strong>Spring Boot 3:</strong> Framework web responsável pelo gerenciamento de microsserviços. 
 <br>
 <h3>Minhas Contribuições</h3>
-<p align="justify">Ao longo do desenvolvimento do projeto, fui designado o Scruum Master da equipe elaborando tasks, gerenciando a produtividade da equipe e gestão de atividades. Também atuei como desenvolvedor front-end contribuindo com arquitetura e estilização de páginas.</p>
 
-### Principais Contribuições
-1. Distribuições de tarefas.
-  
+Durante o desenvolvimento do projeto, desempenhei o papel de Scrum Master, assumindo responsabilidades cruciais para garantir a eficiência e qualidade do trabalho da equipe. Como Scrum Master, minhas principais atribuições incluíram:
+
+1. **Elaboração de Tasks e User Stories:**
+   - Colaborei ativamente com a equipe na definição e elaboração de tarefas e histórias de usuário.
+   - Garanti que as User Stories fossem claras, compreensíveis e atendessem aos critérios de aceitação.
+
+2. **Gestão da Produtividade:**
+   - Implementei práticas ágeis para melhorar a eficiência da equipe.
+   - Realizei reuniões frequentes de scrum para monitorar o progresso, identificar impedimentos e facilitar a colaboração.
+
+3. **Resolução de Impedimentos:**
+   - Removi obstáculos que prejudicavam o progresso da equipe, promovendo um ambiente de trabalho livre de obstáculos.
+
+4. **Facilitação de Reuniões:**
+   - Organizei e facilitai as reuniões de planejamento de sprint, retrospectivas e revisões de sprint.
+
+5. **Comunicação Eficaz:**
+   - Mantive uma comunicação transparente entre os membros da equipe, promovendo a colaboração e o entendimento mútuo.
+
   <img width="907" alt="Captura de tela 2023-09-27 194721" src="https://github.com/WallaceHS20/Bertoti---Engenharia-de-Software/assets/101594950/2d7745b4-4556-497b-abd1-ea40c6b91009">
 
-<br> <br> 
+<br> <br>
   
-2. Desenvolvimento de páginas utilizando linguagem de marcação HTML
+> Além disso, contribuí ativamente como desenvolvedor front-end, desempenhando um papel crucial na arquitetura e estilização das páginas. Minhas contribuições incluíram:
+
+<br>
+
+1. **Arquitetura Front-End:**
+   - Colaborei na definição da arquitetura front-end, garantindo a escalabilidade e modularidade do código.
+
+2. **Estilização de Páginas:**
+   - Contribuí para a estilização de páginas, seguindo as melhores práticas de design e garantindo uma interface de usuário atraente e intuitiva.
   
-~~~HTML
+3. **Requisições HTTPS:**
+   - Colaborei no desenvolvimento de funções dedicadas para realizar requisições, garantindo a integridade e usabilidade dos dados transmitidos e recebidos.
+  
+~~~JavaScript
 
-<!-- EXEMPLO DE TABELA -->
-<table class="table" id="Id_tabela_reg">
-    <thead>
-        <tr>
-            <!--TITULO FIXO NAO DEVE SER ALTERADO-->
-            <th scope="col">ID</th>
-            <th scope="col">Cliente</th>
-            <th scope="col" >Produto</th>
-            <th scope="col">Data de Registro</th>
-            <th scope="col" colspan="2"></th>
-        </tr>
-    </thead>
-    <tbody>
-    
-    </tbody>
-  </table>
-  ~~~
+// Esta função realiza uma requisição GET para nossa API Spring Boot e atualiza o valor da constante vendedores
 
-https://user-images.githubusercontent.com/101594950/233888446-d92a9d1f-cef3-47ce-9780-4856b17ec2ab.mp4
+async function buscarVendedores() {
+    try {
+
+        /* Utilizando a biblioteca axios para realizar uma requisição GET para a URL especificada que representa um
+         um endpoint da nossa API Spring Boot que retorna os dados dos vendedores. */
+        
+        const response = await axios.get("http://localhost:8080/vendedor");
+
+        // Atribuindo o resultado a constante vendedores
+        // A propriedade .data é usada para acessar os dados da resposta (response)
+        vendedores.value = resposta.data;
+
+    } catch (ex) {
+
+        // Em caso de erro, exibe um alerta indicando que algo deu errado
+        alert('Ocorreu uma falha!');
+
+        // A mensagem de erro é obtida através da propriedade .message do objeto de exceção (ex)
+        erro.value = (ex as Error).message;
+    }
+}
+
+~~~
 
 <br>
 
 <h3>Conhecimentos Obtidos</h3>
-<p align="justify">O desenvolvimento do projeto Rock Planning foi o meu primeiro contato com o desenvolvimento front-end. A experiência despertou em mim um profundo interesse em me tornar um desenvolvedor front-end.</p>
+<p align="justify">Essa experiência multifacetada me proporcionou uma compreensão abrangente do ciclo de vida do desenvolvimento de software, desde a gestão ágil até a implementação eficaz no front-end. Estou comprometido em continuar trazendo meu conjunto diversificado de habilidades para projetos futuros.</p>
 <h3>Hard Skills </h3>
 <details>
   <summary><b>Clique para ver a lista de hard skills</b></summary>
@@ -85,16 +117,20 @@ https://user-images.githubusercontent.com/101594950/233888446-d92a9d1f-cef3-47ce
       <td>★★★☆☆☆</td>
     </tr>
     <tr>
-      <td>Front-end</td>
-      <td>★★★★☆☆</td>
+      <td>HTML</td>
+      <td>★★★★★☆</td>
+    </tr>
+        <tr>
+      <td>CSS</td>
+      <td>★★★★★☆</td>
+    </tr>
+        <tr>
+      <td>JavaScript</td>
+      <td>★★★☆☆☆</td>
     </tr>
     <tr>
       <td>MySQL</td>
       <td>★★★☆☆☆</td>
-    </tr>
-    <tr>
-      <td>Scrum Master</td>
-      <td>★★★★☆☆</td>
     </tr>
   </table>
 </details>
@@ -109,24 +145,20 @@ https://user-images.githubusercontent.com/101594950/233888446-d92a9d1f-cef3-47ce
     </tr>
     <tr>
       <td>Proatividade</td>
-      <td>★★★★★★☆☆☆☆</td>
+      <td>★★★☆☆☆</td>
     </tr>
     <tr>
       <td>Visão de Negócio</td>
-      <td>★★★★★★☆☆☆☆</td>
+      <td>★★☆☆☆☆</td>
     </tr>
     <tr>
-      <td>Comunicação Assertiva</td>
-      <td>★★★★★★☆☆☆☆</td>
+      <td>Comunicação</td>
+      <td>★★★★☆☆</td>
     </tr>
     <tr>
       <td>Empatia</td>
-      <td>★★★★★★☆☆☆☆</td>
-    </tr>
-    <tr>
-      <td>Inteligência Emocional</td>
-      <td>★★★★★★☆☆☆☆</td>
+      <td>★★★★★☆</td>
     </tr>
     <tr>
       <td>Organização e Planejamento</td>
-      <td>★★★★★★☆☆☆☆</td
+      <td>★★★★☆☆</td
