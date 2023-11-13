@@ -1,6 +1,6 @@
 # Padrão de Projeto Composite
 
-## Visão Geral
+## Visão Geral - Árvore
 
 O padrão de projeto Composite é utilizado para tratar objetos individuais e composições de objetos de maneira uniforme. Este padrão estrutural compõe objetos em estruturas de árvore para representar hierarquias de parte-todo. Ele permite que clientes tratem objetos individuais e composições de objetos da mesma maneira.
 
