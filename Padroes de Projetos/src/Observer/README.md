@@ -6,7 +6,7 @@ O padrão de projeto Observer é utilizado para criar uma relação de assinatur
 
 ## Diagrama UML
 
-<img src="https://user-images.githubusercontent.com/81486915/204660216-35816772-382b-4f6a-816f-bc9cc5be565a.png">
+![bt](https://github.com/WallaceHS20/Bertoti/assets/101594950/4eafb1ae-6263-433a-8b46-53032193072e)
 
 ## Componentes
 
