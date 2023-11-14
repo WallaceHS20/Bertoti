@@ -6,7 +6,7 @@ O padrão de projeto Composite é utilizado para tratar objetos individuais e co
 
 ## Diagrama UML
 
-<img src="https://github.com/IgorRibeiro-S/bertoti/blob/main/PadraodeProjetos/DesingPatternJava/Composite/PatternComposite/composite.drawio.png?raw=true">
+![composite-Page-1 drawio (1)](https://github.com/WallaceHS20/Bertoti/assets/101594950/b7b9345c-2d43-4509-9a08-24e5d00bda77)
 
 ## Componentes
 
