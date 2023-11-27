@@ -4,7 +4,7 @@
 
 Este projeto é um aplicativo de desenho baseado em Java Swing que demonstra a utilização de vários padrões de projeto, incluindo Model-View-Controller (MVC), Strategy, Composite e Observer. O aplicativo permite aos usuários criar e exibir formas geométricas simples, com a flexibilidade para estender a funcionalidade para cenários de desenho mais complexos.
 
-## Diagrama
+## Diagrama UML
 
 ![mvc_uml](https://github.com/WallaceHS20/Bertoti/assets/101594950/e32ac7a3-d14c-433f-a110-62d1ef584cef)
 
