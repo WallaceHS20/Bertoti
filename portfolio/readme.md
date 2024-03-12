@@ -1,3 +1,48 @@
+
+<div class="semestre3">
+
+<div align=center>
+<h1>+EMPREGO</h1>
+</div>
+
+<h4> 2º Semestre • <a href="https://github.com/B1naryDevs/API">Repositório Github</a></h4>
+<p align="justify"> Empresa Parceira • <a href="https://www.pro4tech.com.br/">Pro4tech</a></p>
+
+<p align="center"><img src="https://github.com/WallaceHS20/Bertoti/assets/101594950/5dda1466-348d-4d96-9a1d-66a5f5b98854" widht="20%"></img>
+
+<p align="justify"> O +Emprego é um sistema Desktop que tem como objetivo realizar o gerenciamento e acompanhamento de processos seletivos de candidatos para vagas de emprego, sendo capaz também de realizar relatórios e análises de aprovação do setor de recursos humanos.
+</p>
+
+<br>
+
+<h2> <a name="Objetivo">Objetivo</a> </h2>
+
+#### Após a finalização do projeto pela equipe B1naryDevs:
+* O Administrador é capaz de publicar vagas de emprego no sistema;
+* O usuário é capaz de se candidatar as vagas de emprego cadastradas no sistema;
+* O Administrador conseguirá monitorar as aprovações e reprovações das vagas através de um Dashboard;
+
+<br>
+
+<h2>Tecnologias Utilizadas no Projeto</h2>
+
+<p align="justify"> <strong>Java SE 14:</strong> linguagem para desenvolvimento da aplicação para front-end e back-end.</p>
+<p align="justify"><strong>MSQL:</strong> SGBD para desenvolvimento do Banco de Dados.</p>
+<p align="justify"><strong>MSQL-Connector-5.1.18:</strong> Conector do banco de dados.</p>
+
+<img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" target="_blank"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" target="_blank"><img src="https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" target="_blank">
+
+  
+<br>
+  
+<h3>Minhas Contribuições</h3>
+  
+> Contribuí ativamente como desenvolvedor back-end, desempenhando um papel crucial na arquitetura e construção do banco de dados além do desenvolvimento de classes, funcionalidades e conexão com os componentes de interface do JavaFXs. Minhas contribuições incluíram:
+
+<br>
+
+----------------------------------------------------------------------
+
 <div class="semestre3">
 
 
