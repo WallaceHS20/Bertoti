@@ -36,12 +36,50 @@
 <br>
   
 <h3>Minhas Contribuições</h3>
-  
-> Contribuí ativamente como desenvolvedor back-end, desempenhando um papel crucial na arquitetura e construção do banco de dados além do desenvolvimento de classes, funcionalidades e conexão com os componentes de interface do JavaFXs. Minhas contribuições incluíram:
+
+ > Contribuí ativamente como desenvolvedor back-end, desempenhando um papel crucial na arquitetura e construção do banco de dados além do desenvolvimento de classes, funcionalidades e conexão dos componentes de interface do JavaFXs com as variáveis do sistema. Minhas contribuições incluíram:
 
 <br>
 
-----------------------------------------------------------------------
+## 1. **Criação e Arquitetura do Banco de Dados:**
+   - Colaborei com a modelagem do banco de dados garantindo o que as transações ocorram com segurança.
+   - Contribuí no script de criação e arquitetura do banco de dados e suas respectivas tabelas.
+
+~~~~sql
+
+#CREATE USER 'binary'@'localhost' IDENTIFIED BY 'binary123';
+#GRANT ALL PRIVILEGES ON * . * TO 'binary'@'localhost';
+
+create database api
+default character set utf8
+default collate utf8_general_ci; 
+
+use api;
+
+# TABELAS
+
+CREATE TABLE candidato(
+nome_candidato varchar(30) not null,
+cpf bigint (11) not null,
+data_nasc varchar(10) not null,
+telefone bigint (11) not null,
+pret_salarial decimal(7,2) null,
+pret_cargo varchar(30) null,
+nome_comp VARCHAR(35) NULL,
+instituicao VARCHAR(50) NULL,
+inicio_curso varchar(10) null,
+termino_curso varchar(10) null,
+nivel ENUM('Básico', 'Intermediário', 'Avançado') null,
+curso VARCHAR(30) NULL,
+primary key (cpf)) default charset = utf8;
+
+~~~~~
+
+## 2. **Desenvolvimento de Funcionalidades do Sistema:**
+   - Criei funcionalidades internas do sistema .
+   - Garanti que as User Stories fossem claras, compreensíveis e atendessem aos critérios de aceitação.
+
+<br>
 
 <div class="semestre3">
 
