@@ -71,13 +71,42 @@ inicio_curso varchar(10) null,
 termino_curso varchar(10) null,
 nivel ENUM('Básico', 'Intermediário', 'Avançado') null,
 curso VARCHAR(30) NULL,
-primary key (cpf)) default charset = utf8;
+primary key (cpf)) default charset = utf8;)
 
 ~~~~~
 
 ## 2. **Desenvolvimento de Funcionalidades do Sistema:**
-   - Criei funcionalidades internas do sistema .
-   - Garanti que as User Stories fossem claras, compreensíveis e atendessem aos critérios de aceitação.
+   - Criei funcionalidades internas do sistema.
+   - Implementei a conexão do banco de dados com a aplicação por meio da programação orientada a objeto.
+
+  ~~~~JAVA
+public class ConnectionFactory {
+
+    private  static  final String USERNAME = "binary";
+    private  static  final String PASSWORD = "binary123";
+    private  static  final String DATABASE_URL = "jdbc:mysql://localhost:3306/api";
+
+    public static Connection createConnectionToMySQL() throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.jdbc.Driver");
+
+        Connection connection = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
+
+        return connection;
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        Connection con = createConnectionToMySQL();
+        if (con != null) {
+            System.out.println("Conexão com sucesso");
+
+        }
+    }
+
+}
+  ~~~~
+
+> 
 
 <br>
 
