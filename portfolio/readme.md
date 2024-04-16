@@ -47,9 +47,6 @@
 
 ~~~~sql
 
-#CREATE USER 'binary'@'localhost' IDENTIFIED BY 'binary123';
-#GRANT ALL PRIVILEGES ON * . * TO 'binary'@'localhost';
-
 create database api
 default character set utf8
 default collate utf8_general_ci; 
@@ -71,7 +68,8 @@ inicio_curso varchar(10) null,
 termino_curso varchar(10) null,
 nivel ENUM('Básico', 'Intermediário', 'Avançado') null,
 curso VARCHAR(30) NULL,
-primary key (cpf)) default charset = utf8;)
+primary key (cpf)) default charset = utf8;
+)
 
 ~~~~~
 
