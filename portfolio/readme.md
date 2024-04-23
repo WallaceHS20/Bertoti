@@ -37,7 +37,7 @@
   
 <h3>Minhas Contribuições</h3>
 
- > Contribuí ativamente como desenvolvedor back-end, desempenhando um papel crucial na arquitetura e construção do banco de dados além do desenvolvimento de classes, funcionalidades e conexão dos componentes de interface do JavaFXs com as variáveis do sistema. Minhas contribuições incluíram:
+ > Contribuí ativamente com a arquitetura e modelagem do banco de dados aplicando os conceitos básicos de cardinalidade e realização de consultas avançadas.
 
 <br>
 
@@ -73,8 +73,10 @@ primary key (cpf)) default charset = utf8;
 
 ~~~~~
 
+> Atuei como desenvolvedor back-end, desempenhando um papel crucial no desenvolvimento de classes, funcionalidades e conexão dos componentes da interface do JavaFXs com as variáveis do sistema. Minhas contribuições incluíram:
+
 ## 2. **Desenvolvimento de Funcionalidades do Sistema:**
-   - Criei funcionalidades internas do sistema.
+   - Auxiliei a criação de classes e instanciamento de objetos.
    - Implementei a conexão do banco de dados com a aplicação por meio da programação orientada a objeto.
 
   ~~~~JAVA
@@ -103,8 +105,54 @@ public class ConnectionFactory {
 
 }
   ~~~~
-
-> 
+<h2>Conhecimentos Obtidos</h2>
+<p align="justify">Essa experiência multifacetada me proporcionou uma compreensão abrangente do ciclo de vida do desenvolvimento de software, desde a gestão ágil até a implementação eficaz no front-end. Estou comprometido em continuar trazendo meu conjunto diversificado de habilidades para projetos futuros.</p>
+<h3>Hard Skills </h3>
+<details>
+  <summary><b>Clique para ver a lista de hard skills</b></summary>
+  <br>
+  <table align="center">
+    <tr>
+      <th width="300px">Tecnologia/Metodologia</th>
+      <th width="300px">Classificação</th>
+    </tr>
+    <tr>
+      <td>Java</td>
+      <td>★★★★☆☆</td>
+    </tr>
+    <tr>
+      <td>MySQL</td>
+      <td>★★★★★☆</td>
+    </tr>
+  </table>
+</details>
+<h3>Soft Skills </h3>
+<details>
+<summary><b>Clique para ver a lista de soft skills</b></summary>
+  <br>
+  <table align="center">
+    <tr>
+      <th width="300px">Habilidade</th>
+      <th width="300px">Classificação</th>
+    </tr>
+    <tr>
+      <td>Proatividade</td>
+      <td>★★★☆☆☆</td>
+    </tr>
+    <tr>
+      <td>Visão de Negócio</td>
+      <td>★★★★☆☆</td>
+    </tr>
+    <tr>
+      <td>Comunicação</td>
+      <td>★★★★☆☆</td>
+    </tr>
+    <tr>
+      <td>Organização e Planejamento</td>
+      <td>★★★★☆☆</td
+    </tr>
+ </table>
+</details> 
 
 <br>
 
