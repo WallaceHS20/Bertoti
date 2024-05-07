@@ -15,6 +15,10 @@
 
 <br>
 
+<details>
+
+<summary align=center> VER MAIS DETALHES :information_source: </summary>
+
 <h2> <a name="Objetivo">Objetivo</a> </h2>
 
 #### Após a finalização do projeto pela equipe B1naryDevs:
@@ -41,8 +45,7 @@
 
 <br>
 
-## 1. **Criação e Arquitetura do Banco de Dados:**
-   - Colaborei com a modelagem do banco de dados garantindo o que as transações ocorram com segurança.
+## 1. **Criação do Banco de Dados:**
    - Contribuí no script de criação e arquitetura do banco de dados e suas respectivas tabelas.
 
 ~~~~sql
@@ -73,13 +76,73 @@ primary key (cpf)) default charset = utf8;
 
 ~~~~~
 
-> Atuei como desenvolvedor back-end, desempenhando um papel crucial no desenvolvimento de classes, funcionalidades e conexão dos componentes da interface do JavaFXs com as variáveis do sistema. Minhas contribuições incluíram:
+## 2. **Arquitetura de Banco de Dados:**
+  - Criação e definição das chaves estrangeiras garantindo que as transações ocorram com segurança e precisão.
+
+~~~~sql
+
+# CHAVE ESTRANGEIRA FK - EMAIL DE USUARIO
+ALTER TABLE usuario ADD FOREIGN KEY (cpf_candidato_usu) REFERENCES candidato (cpf);
+
+# CHAVE ESTRANGEIRA FK - CARGO PARA VAGA 
+ALTER TABLE vaga ADD FOREIGN KEY (cargo_vaga) REFERENCES cargo (nome_cargo);
+
+# CHAVE ESTRANGEIRA FK - CPF DO CANDIDATO PARA CANDIDATURA
+ALTER TABLE candidatura ADD FOREIGN KEY (cpf_candidatura) REFERENCES candidato (cpf);
+
+ALTER TABLE candidatura ADD FOREIGN KEY (funcionario_cpf) REFERENCES funcionario(cpf);
+
+# CHAVE ESTRANGEIRA FK - CODIGO DA VAGA PARA CANDIDATURA
+ALTER TABLE candidatura ADD FOREIGN KEY (cod_vaga) REFERENCES vaga (id_vaga);
+
+# CHAVE ESTRANGEIRA FK - CARGO DA CANDIDATURA PARA CARGO 
+ALTER TABLE candidatura ADD FOREIGN KEY (cargo_candidatura) REFERENCES cargo(nome_cargo);
+
+# CHAVE ESTRANGEIRA FK - NOME DO CARGO PARA PRETENÇÃO DE CARGO PRETENDIDO DO CANDIDATO
+ALTER TABLE candidato ADD FOREIGN KEY (pret_cargo) REFERENCES cargo(nome_cargo);
+
+# CHAVE ESTRANGEIRA FK - CPF CANDIDATO PARA EXPERIÊNCIA PROFISSIONAL
+ALTER TABLE experiencia_profissional ADD FOREIGN KEY (cpf_candidato_exp) REFERENCES candidato (cpf);
+
+~~~~~
+
+<br>
+
+> Também atuei como desenvolvedor back-end, desempenhando um papel crucial no processo de criação de classes, desenvolvimento de funcionalidades do sistema e conexão dos componentes da interface do JavaFX com as variáveis do programa. Minhas contribuições incluíram:
+
+<br>
+
+## 1. **Arquitetura do Projeto:**
+   - Auxiliei na criação das classes implementadas do projeto.
+
+~~~~JAVA
+public class Usuario {
+
+    public static String email;
+    public static Long cpf;
+
+    public static String getEmail() {
+        return email;
+    }
+
+    public static void setEmail(String email) {
+        Usuario.email = email;
+    }
+
+    public static Long getCpf() {
+        return cpf;
+    }
+
+    public static void setCpf(Long cpf) {
+        Usuario.cpf = cpf;
+    }
+}
+~~~~
 
 ## 2. **Desenvolvimento de Funcionalidades do Sistema:**
-   - Auxiliei a criação de classes e instanciamento de objetos.
-   - Implementei a conexão do banco de dados com a aplicação por meio da programação orientada a objeto.
+   - Auxiliei com a implementação do modelo DAO (Data Access Object) para as transações de dados entre classe do projeto e banco de dados ocorram de forma assertiva.
 
-  ~~~~JAVA
+~~~~JAVA
 public class ConnectionFactory {
 
     private  static  final String USERNAME = "binary";
@@ -104,7 +167,8 @@ public class ConnectionFactory {
     }
 
 }
-  ~~~~
+~~~~
+
 <h2>Conhecimentos Obtidos</h2>
 <p align="justify">Essa experiência multifacetada me proporcionou uma compreensão abrangente do ciclo de vida do desenvolvimento de software, desde a gestão ágil até a implementação eficaz no front-end. Estou comprometido em continuar trazendo meu conjunto diversificado de habilidades para projetos futuros.</p>
 <h3>Hard Skills </h3>
@@ -152,7 +216,11 @@ public class ConnectionFactory {
       <td>★★★★☆☆</td
     </tr>
  </table>
-</details> 
+</details>
+
+</summary>
+
+</details>
 
 <br>
 
@@ -171,6 +239,10 @@ public class ConnectionFactory {
 <p align="justify"> A Rock Planning é uma aplicação web que visa gerenciar as vendas, considerando o histórico do vendedor, o planejamento e as vendas realizadas. Deverá apresentar um comparativo dos dados mencionados anteriormente para que possam ser analisados de forma precisa e detalhada. Além disso, a aplicação será aprimorada com a adição de uma predição gerada por um algoritmo de Inteligência Artificial pré-existente, a fim de proporcionar maior precisão e confiabilidade.</p>
 
 <br>
+
+<details>
+
+<summary align=center> VER MAIS DETALHES :information_source: </summary>
 
 <h2> <a name="Objetivo">Objetivo</a> </h2>
 
@@ -390,3 +462,8 @@ async function buscarVendedores() {
     <tr>
       <td>Organização e Planejamento</td>
       <td>★★★★☆☆</td
+    </tr>
+  </table>
+</details>
+</summary>
+</details>
