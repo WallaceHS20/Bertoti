@@ -50,13 +50,15 @@
 
 ~~~~sql
 
+# Criação do banco de dados 
+
 create database api
 default character set utf8
 default collate utf8_general_ci; 
 
 use api;
 
-# TABELAS
+# tabela Candidato, uma das principais tabelas do sistema de vagas de emprego
 
 CREATE TABLE candidato(
 nome_candidato varchar(30) not null,
@@ -80,6 +82,9 @@ primary key (cpf)) default charset = utf8;
   - Criação e definição das chaves estrangeiras garantindo que as transações ocorram com segurança e precisão.
 
 ~~~~sql
+
+/* Definição de chaves estrangeiras, que permite a referência a registros oriundos
+de outras tabelas do sistema, crucial para realização de consultas precisas. */
 
 # CHAVE ESTRANGEIRA FK - EMAIL DE USUARIO
 ALTER TABLE usuario ADD FOREIGN KEY (cpf_candidato_usu) REFERENCES candidato (cpf);
@@ -116,6 +121,10 @@ ALTER TABLE experiencia_profissional ADD FOREIGN KEY (cpf_candidato_exp) REFEREN
    - Auxiliei na criação das classes implementadas do projeto.
 
 ~~~~JAVA
+
+/* Criação da classe Usuário, essencial para o candidato ou operador do sistema logar.
+Seus dados serão transmitidos para demais telas do sistema e vicnulado as transações do sistemas. */
+
 public class Usuario {
 
     public static String email;
@@ -143,6 +152,10 @@ public class Usuario {
    - Auxiliei com a implementação do modelo DAO (Data Access Object) para as transações de dados entre classe do projeto e banco de dados ocorram de forma assertiva.
 
 ~~~~JAVA
+
+/* Criação e configuração da classe responsável conexão com banco de dados
+por meio do padrão de projeto DAO */
+
 public class ConnectionFactory {
 
     private  static  final String USERNAME = "binary";
