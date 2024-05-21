@@ -48,6 +48,10 @@
 ## 1. **Criação do Banco de Dados:**
    - Contribuí no script de criação e arquitetura do banco de dados e suas respectivas tabelas.
 
+<details>
+  
+  <summary>Detalhes</summary>
+  
 ~~~~sql
 
 # Criação do banco de dados 
@@ -78,8 +82,14 @@ primary key (cpf)) default charset = utf8;
 
 ~~~~~
 
+</details>
+
+
 ## 2. **Arquitetura de Banco de Dados:**
   - Criação e definição das chaves estrangeiras garantindo que as transações ocorram com segurança e precisão.
+
+<details>
+  <summary>Detalhes</summary>
 
 ~~~~sql
 
@@ -110,6 +120,8 @@ ALTER TABLE candidato ADD FOREIGN KEY (pret_cargo) REFERENCES cargo(nome_cargo);
 ALTER TABLE experiencia_profissional ADD FOREIGN KEY (cpf_candidato_exp) REFERENCES candidato (cpf);
 
 ~~~~~
+  
+</details>
 
 <br>
 
@@ -117,8 +129,11 @@ ALTER TABLE experiencia_profissional ADD FOREIGN KEY (cpf_candidato_exp) REFEREN
 
 <br>
 
-## 1. **Arquitetura do Projeto:**
+## 3. **Arquitetura do Projeto:**
    - Auxiliei na criação das classes implementadas do projeto.
+
+<details>
+  <summary>Detalhes</summary>
 
 ~~~~JAVA
 
@@ -147,9 +162,16 @@ public class Usuario {
     }
 }
 ~~~~
+  
+</details>
 
-## 2. **Desenvolvimento de Funcionalidades do Sistema:**
+
+
+## 4. **Desenvolvimento de Funcionalidades do Sistema:**
    - Auxiliei com a implementação do modelo DAO (Data Access Object) para as transações de dados entre classe do projeto e banco de dados ocorram de forma assertiva.
+
+<details>
+  <summary>Detalhes</summary>
 
 ~~~~JAVA
 
@@ -181,6 +203,9 @@ public class ConnectionFactory {
 
 }
 ~~~~
+
+</details>
+
 
 <h2>Conhecimentos Obtidos</h2>
 <p align="justify">Essa experiência multifacetada me proporcionou uma compreensão abrangente do ciclo de vida do desenvolvimento de software, desde a gestão ágil até a implementação eficaz no front-end. Estou comprometido em continuar trazendo meu conjunto diversificado de habilidades para projetos futuros.</p>
@@ -288,8 +313,11 @@ public class ConnectionFactory {
 
 ## 1. **Arquitetura HTML:**
    - Colaborei com a arquitetura e estruturações da página, garantindo a escalabilidade e modularidade do código com HTML.
+
+<details>
+<summary>Detalhes</summary>
   
-~~~~HTML
+  ~~~~HTML
 <!-- Tabela de vendedores com classes para estilização e identificador único para manipulação via scripts -->
 <table class="table" id="tabelaVendedores">
   <!-- Cabeçalho da tabela definindo as colunas disponíveis -->
@@ -306,10 +334,16 @@ public class ConnectionFactory {
 </table>
 ~~~~
 
+</details>
+
 <br>
 
 ## 2. **Estilização de Páginas:**
    - Contribuí para a estilização de páginas, seguindo as melhores práticas de design e garantindo uma interface de usuário atraente e intuitiva.
+
+<details>
+
+<summary>Detalhes</summary>
 
 ~~~~CSS
 /* Estilo geral para todas as tabelas, definindo largura, colapso de borda para evitar espaços duplos, cor da borda, e centralização na página */
@@ -360,11 +394,17 @@ tr:hover {
 }
 ~~~~
 
+</details>
+
 <br>
 
 ## 3. **Requisições REST:**
    - Colaborei no desenvolvimento de funções dedicadas para realizar requisições, garantindo a integridade e usabilidade dos dados transmitidos e recebidos.
-  
+
+<details>
+
+<summary>Detalhes</summary>
+
 ~~~JavaScript
 
 // Esta função realiza uma requisição GET para nossa API Spring Boot e atualiza o valor da constante vendedores
@@ -393,24 +433,31 @@ async function buscarVendedores() {
 
 ~~~
 
+</details>
+  
 <br>
 
 > Durante o desenvolvimento do projeto, desempenhei o papel de Scrum Master, assumindo responsabilidades cruciais para garantir a eficiência e qualidade do trabalho da equipe. Como Scrum Master, minhas principais atribuições incluíram:
 
 <br>
 
-## 1. **Elaboração de Tasks e User Stories:**
+## 4. **Elaboração de Tasks e User Stories:**
    - Colaborei ativamente com a equipe na definição e elaboração de tarefas e histórias de usuário.
    - Garanti que as User Stories fossem claras, compreensíveis e atendessem aos critérios de aceitação.
 
-## 2. **Gestão da Produtividade:**
+## 5. **Gestão da Produtividade:**
    - Implementei práticas ágeis para melhorar a eficiência da equipe.
    - Removi obstáculos que prejudicavam o progresso da equipe, promovendo um ambiente de trabalho livre de obstáculos.
    - Mantive uma comunicação transparente entre os membros da equipe, promovendo a colaboração e o entendimento mútuo.
 
 <br>
 
-  <img width="907" alt="Captura de tela 2023-09-27 194721" src="https://github.com/WallaceHS20/Bertoti---Engenharia-de-Software/assets/101594950/2d7745b4-4556-497b-abd1-ea40c6b91009">
+<details>
+  <summary>Detalhes</summary>
+
+<img width="907" alt="Captura de tela 2023-09-27 194721" src="https://github.com/WallaceHS20/Bertoti---Engenharia-de-Software/assets/101594950/2d7745b4-4556-497b-abd1-ea40c6b91009">
+    
+</details>
 
 <br> <br>
 
