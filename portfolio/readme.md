@@ -1,3 +1,16 @@
+<div class="semestre1">
+
+<div align=center>
+<h1>OTUS PROJECT</h1>
+</div>
+
+<h4> 1º Semestre • <a href="https://github.com/B1naryDevs/API">Repositório Github</a></h4>
+<p align="justify"> Empresa Parceira • <a href="https://www.pro4tech.com.br/">FATEC</a></p>
+
+<p align="center"><img src="https://github.com/WallaceHS20/Bertoti/assets/101594950/2858b006-347d-4796-9a4b-c5edb0c4ea19" widht="20%"></img>
+
+<p align="justify"> O +Emprego é um sistema Desktop que tem como objetivo realizar o gerenciamento e acompanhamento de processos seletivos de candidatos para vagas de emprego, sendo capaz também de realizar relatórios e análises de aprovação do setor de recursos humanos.
+</p>
 
 <div class="semestre3">
 
