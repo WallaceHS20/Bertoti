@@ -9,7 +9,7 @@
 
 <p align="center"><img src="https://github.com/WallaceHS20/Bertoti/assets/101594950/2858b006-347d-4796-9a4b-c5edb0c4ea19" widht="20%"></img>
 
-<p align="justify"> O API a ser desenvolvido é uma assistente virtual acionada por comando de voz, tendo como público alvo alunos de programação que buscam inovar seus métodos de estudo e organizar seus horários.</p>
+<p align="justify"> A Otus Project é uma assistente virtual acionada por comando de voz, tendo como público alvo alunos de programação que buscam inovar seus métodos de estudo e organizar seus horários.</p>
 
 <details>
   
@@ -34,10 +34,13 @@
   
 <h3>Minhas Contribuições</h3>
 
- > Contribuí ativamente com desenvolvimento de funcionalidades do sistema e interatividaded do usuário.
+ > Contribuí ativamente com desenvolvimento de funcionalidades do sistema e interatividade do usuário.
 
 ## 1. **Desenvolvimento de funcionalidades do sistema**
    - Contribuí ativamente com o desenvolvimento de funcionalidades de interatividade com usuário.
+
+<details>
+  <summary>Detalhes</summary>
 
 ~~~~python
 # A função seguinte tem como objetivo escutar o usuário e encaminha-lo para uma página de um artigo com seu respectivo assunto escolhido
@@ -73,9 +76,14 @@ def consult_art():
         else:
             falar("Diga um valor compatível com a lista!") # caso escolha do usuraio seja incompativel com itens da lista
 ~~~~
+  
+</details>
 
 ## 2. **Execução de funcionalidades em Thread**
    - Contribuí ativamente com o desenvolvimento de funcionalidades de interatividade com usuário.
+
+<details>
+  <summary>Detalhes</summary>
 
 ~~~~python
 # EXECUÇÃO DE DUAS FUNCIONALIDADES SIMULTÂNEAS ( INTERFACE E SISTEMA DE VOZ )
@@ -92,6 +100,8 @@ def guia_de_estudo():
     threading.Thread(target=questionario).start() # executar função simultaneamente com interface
     interface.mainloop() #executa a abertura da interface
 ~~~~
+  
+</details>
 
 <h2>Conhecimentos Obtidos</h2>
 <p align="justify">Essa experiência multifacetada me proporcionou uma compreensão abrangente do ciclo de vida do desenvolvimento de software, desde a gestão ágil até a implementação eficaz no front-end. Estou comprometido em continuar trazendo meu conjunto diversificado de habilidades para projetos futuros.</p>
@@ -706,72 +716,213 @@ async function buscarVendedores() {
 
 <h2>Tecnologias Utilizadas no Projeto</h2>
 
-<p align="justify"> <strong>Python 3 </strong> linguagem para desenvolvimento da aplicação para front-end e back-end.</p>
+<p align="justify"> <strong>Java 14:</strong> linguagem para desenvolvimento da aplicação para back-end.</p>
+<p align="justify"> <strong>TypeScript:</strong> linguagem para desenvolvimento da aplicação para front-end.</p>
+<p align="justify"> <strong>Vue JS:</strong> Framework de desenvolvimento de interfaces de usuário e aplicativos de página única.</p>
+<p align="justify"> <strong>Spring Boot:</strong> Framework Java de desenvolvimento de aplicações Spring, proporcionando configuração automática e um ambiente de execução standalone.</p>
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
+
+![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
   
 <br>
   
 <h3>Minhas Contribuições</h3>
 
- > Contribuí ativamente com desenvolvimento de funcionalidades do sistema e interatividaded do usuário.
+ > Contribuí ativamente como desenvolvedor front-end na construção da arquitetura e design da aplicação, colaborando com a equipe para criar uma estrutura escalável e eficiente.
 
-## 1. **Desenvolvimento de funcionalidades do sistema**
-   - Contribuí ativamente com o desenvolvimento de funcionalidades de interatividade com usuário.
+## 1. **Criação de componentes**
+   - Contribuí ativamente com o desenvolvimento de componentes de interface, focando na criação de elementos visuais interativos e responsivos.
 
-~~~~python
-# A função seguinte tem como objetivo escutar o usuário e encaminha-lo para uma página de um artigo com seu respectivo assunto escolhido
+<details>
+  <summary>Detalhes</summary>
 
-def consult_art():
-    while True:
-        falar('DIGA O NÚMERO DO ITEM QUE DESEJA PESQUISAR EM VOZ ALTA:')
-        threading.Thread(target=tocar, args=["start.mp3"]).start()
-        escolha = ouvir() #variavel escolha recebe valor dito pelo usuario
-        threading.Thread(target=tocar, args=["success.mp3"]).start()
-        new = 0
+  ~~~~typescript
+# Criação do componente popUp quando determinada ação ou processo é finalizada
 
-            #caso escolha seja verdadeira, executa comando para abrir navegador com url pré-determinada
-        if escolha == '1':
-            webbrowser.open('https://ftp.unicamp.br/pub/apoio/treinamentos/logica/logica.pdf', new=new)
-            webbrowser.open('https://www.seduc.ce.gov.br/wp-content/uploads/sites/37/2012/06/informatica_logica_de_programacao.pdf', new=new)
-            webbrowser.open("https://dicasdeprogramacao.com.br/download/ebook-logica-de-programacao-para-iniciantes.pdf", new=new)
-            interface.destroy() #após navegador ser aberto, fechará a interface e pausa a repetição
-            break
+<template>
+    <div v-if="showPopup" class="cover"></div>
+    <div class="card" :class="{ active: showPopup }">
+        <button @click="ocultarPopup" class="dismiss" type="button">×</button>
+        <div class="header">
+            <div class="image">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M20 7L9.00004 18L3.99994 13" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+            </div>
+            <div class="content">
+                <span class="title">{{ title }}</span>
+                <p class="message">{{ mensagem }}</p>
+            </div>
+        </div>
+    </div>
+</template>
+~~~~
+  
+</details>
 
-        elif escolha == '2':
-            webbrowser.open('http://antigo.scl.ifsp.edu.br/portal/arquivos/2016.05.04_Apostila_Python_-_PET_ADS_S%C3%A3o_Carlos.pdf', new=new)
-            webbrowser.open('https://irias.com.br/blog/python-mysql-criando-um-crud-completo/', new=new)
-            interface.destroy()
-            break
+## 2. **Criação de Views**
+   - Contribuí ativamente com o desenvolvimento de diversas páginas de renderização, garantindo que os formulários e layouts fossem responsivos e de fácil navegação.
 
-        elif escolha == '3':
-            webbrowser.open('https://www.devmedia.com.br/instalando-e-configurando-a-nova-versao-do-mysql/25813', new=new)
-            webbrowser.open('http://www.telecentros.sp.gov.br/saber/apostilas/antigas/apostila_sql.pdf', new=new)
-            interface.destroy()
-            break
+<details>
+  <summary>Detalhes</summary>
 
-        else:
-            falar("Diga um valor compatível com a lista!") # caso escolha do usuraio seja incompativel com itens da lista
+  ~~~~typescript
+# Formulário de cadastro de prestador
+<template>
+  <div class="form-cadastro">
+      <div class="form-title">
+          <h1>Prestador de Serviço</h1>
+          <span>> Cadastro</span>
+      </div>
+      <div class="form-body">
+          <div class="input-group">
+              <div class="input-box">
+                  <label for="id_nome">Nome</label>
+                  <input type="text" id="id_nome" v-model="nome" placeholder="Ex: Encanador">
+              </div>
+
+              <div class="input-box">
+                  <label for="id_cnpj">CNPJ</label>
+                  <input type="number" id="id_cnpj" v-model="cnpj" placeholder="00.000.000/0000-00">
+              </div>
+
+              <div class="input-box">
+                <label for="id_categoria">Segmento</label>
+                <select id="id_categoria" v-model="categoriaSelecionada">
+                  <option v-for="ctg in categoria" :key="ctg.id" :value="ctg.id">{{ ctg.nome }}</option>
+                </select>
+              </div>
+
+              <div class="input-box">
+                  <label for="id_email">Email</label>
+                  <input type="email" id="id_email" v-model="email" placeholder="Ex: joao@gmail.com">
+              </div>
+
+              <div class="input-box">
+                  <label for="id_senha">Senha</label>
+                  <input v-model="senha" type="password" id="id_senha">
+              </div>
+          </div>
+
+          <div class="form-submit">
+                  <button @click="returnarPag" class="button-return">Voltar</button>
+                  <button @click="cadastrarPrestador">Cadastrar</button>
+          </div>
+
+      </div>
+
+      <div class="form-footer">
+          <p>© B1naryInspec | V.01</p>
+      </div>
+  </div>
+  <ThePopUp></ThePopUp>
+</template>
+
+<script setup lang="ts">
+
+import { onMounted, ref } from 'vue';
+import ThePopUp from '../components/ThePopUp.vue';
+import {exibirPopup} from '../components/ThePopUp.vue'
+import axios from 'axios';
+
+ // Capturando os valores dos campos
+const categoria = ref([]);
+const erro = ref();
+const nome = ref("");
+const cnpj = ref("");
+const email = ref("");
+const senha = ref("");
+const token = localStorage.getItem('token')
+
+~~~~
+  
+</details>
+
+## 3. **Criação e configuração de rotas**
+   - Contribuí ativamente com o desenvolvimento de rotas de navegação da aplicação front-end.
+
+<details>
+  <summary>Detalhes</summary>
+
+  ~~~~typescript
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: HomeView
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/Login.vue'),
+      beforeEnter (_, __, next) { // Impede usuários não assinados
+        if (!verifyTokenAcesso()) {       // de acessar a página Home.
+          next();
+          return;
+        }
+        next('/')
+      }
+    },
+...
 ~~~~
 
-## 2. **Execução de funcionalidades em Thread**
-   - Contribuí ativamente com o desenvolvimento de funcionalidades de interatividade com usuário.
+</details>
 
-~~~~python
-# EXECUÇÃO DE DUAS FUNCIONALIDADES SIMULTÂNEAS ( INTERFACE E SISTEMA DE VOZ )
-def guia_de_estudo():
-    global interface
-    interface = Tk()
-    image = Image.open("imagens\\fundo_consult.png")
-    photo = ImageTk.PhotoImage(image, master=interface)
-    fundo = tk.Label(interface, image=photo)
-    fundo.image = image
-    fundo.pack()
-    interface.geometry('800x650+250+5')
-    interface.title("Guia de estudo")
-    threading.Thread(target=questionario).start() # executar função simultaneamente com interface
-    interface.mainloop() #executa a abertura da interface
+## 4. **Requisições REST**
+   - Contribuí com o desenvolvimento de requisições REST da aplicação.
+
+<details>
+  <summary>Detalhes</summary>
+
+~~~~typescript
+async function cadastrarPrestador() {
+  // Verifique se uma categoria foi selecionada
+  if (categoriaSelecionada.value === null) {
+    alert('Selecione uma categoria antes de cadastrar.');
+    return;
+  }
+    var usuarioId = await cadastrarUsuario();
+  
+  // Fazendo a requisição POST com os valores capturados
+  try {
+    
+    await axios.post('http://localhost:8080/prestador', {
+  
+      prestadorNome: nome.value,
+      cnpj: cnpj.value,
+      usuarioId: usuarioId,
+      segmentoId: categoriaSelecionada.value
+  
+    }, 
+    {
+      headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }
+    );
+    
+    enviarEmailCredenciais(email.value, senha.value);
+  
+    // Requisição bem-sucedida, exibir um alerta de confirmação
+    exibirPopup('Cadastro Realizado com Sucesso', 'Novo Prestador Registrado.', 123)
+    limparCampos();
+  
+    
+  } catch (error) {
+    console.error('Ocorreu um erro ao cadastrar o prestador:', error);
+    alert('Erro ao cadastrar o prestador.');
+  }
+}
 ~~~~
+
+</details>
 
 <h2>Conhecimentos Obtidos</h2>
 <p align="justify">Essa experiência multifacetada me proporcionou uma compreensão abrangente do ciclo de vida do desenvolvimento de software, desde a gestão ágil até a implementação eficaz no front-end. Estou comprometido em continuar trazendo meu conjunto diversificado de habilidades para projetos futuros.</p>
@@ -785,12 +936,12 @@ def guia_de_estudo():
       <th width="300px">Classificação</th>
     </tr>
     <tr>
-      <td>Lógica de Programação</td>
-      <td>★★★★☆☆</td>
+      <td>Typescript</td>
+      <td>★★★★★☆</td>
     </tr>
     <tr>
-      <td>Python</td>
-      <td>★★★★★★</td>
+      <td>VueJS</td>
+      <td>★★★★☆☆</td>
     </tr>
   </table>
 </details>
