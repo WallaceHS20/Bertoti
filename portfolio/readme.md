@@ -422,7 +422,6 @@ public class ConnectionFactory {
 
 <div class="semestre3">
 
-
 <div align=center>
 <h1>ROCK PLANNING</h1>
 </div>
@@ -688,7 +687,7 @@ async function buscarVendedores() {
 
 <br>
 
-<div class="semestre1">
+<div class="semestre4">
 
 <div align=center>
 <h1>OTUS PROJECT</h1>
